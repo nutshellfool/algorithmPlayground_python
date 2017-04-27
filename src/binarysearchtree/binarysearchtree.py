@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from Queue import PriorityQueue
 from collections import deque
 
 
@@ -7,6 +8,9 @@ class BinaryTreeNode(object):
         self.val = value
         self.left = None
         self.right = None
+
+    def __cmp__(self, other):
+        return other.val - self.val
 
 
 class BinarySearchTree(object):
@@ -86,6 +90,22 @@ class BinarySearchTree(object):
             if node.right and node.right not in visited:
                 queue.append(node.right)
 
+    def wfs(self):
+        if self.root is None:
+            return
+        priority_queue = PriorityQueue()
+        visited = set()
+        priority_queue.put(self.root)
+
+        while not priority_queue.empty():
+            node = priority_queue.get()
+            print(node.val)
+
+            if node.left and node.left not in visited:
+                priority_queue.put(node.left)
+            if node.right and node.right not in visited:
+                priority_queue.put(node.right)
+
 if __name__ == '__main__':
     bst = BinarySearchTree()
     bst.add_node(3)
@@ -105,3 +125,7 @@ if __name__ == '__main__':
     print ('BFS:')
     print "*" * 20
     bst.bfs()
+    print("*" * 20)
+    print("heuristic Search: Weight First Search")
+    print("*" * 20)
+    bst.wfs()
