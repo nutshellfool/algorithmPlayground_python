@@ -7,7 +7,3 @@ class InsertionSort(object):
                 j -= 1
 
         return items
-
-if __name__  == '__main__':
-    insertionSort = InsertionSort()
-    print insertionSort.insertion_sort([5, 4, 3, 2, 1])

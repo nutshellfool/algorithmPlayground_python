@@ -5,7 +5,3 @@ class BubbleSort(object):
                 if items[j] > items[j + 1]:
                     items[j], items[j + 1] = items[j + 1], items[j]
         return items
-
-if __name__ == '__main__':
-    bubbleSort = BubbleSort()
-    print bubbleSort.bubble_sort([5, 4, 3, 2, 1])

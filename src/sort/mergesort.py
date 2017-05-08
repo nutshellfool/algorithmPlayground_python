@@ -19,9 +19,9 @@ class MergeSort(object):
         - `l1`: First sorted list
         - `l2`: Second sorted list
         """
-        if l1 == None:
+        if l1 is None:
             return l2
-        if l2 == None:
+        if l2 is None:
             return l1
 
         result = []
@@ -36,7 +36,3 @@ class MergeSort(object):
         result += l1[i:]
         result += l2[j:]
         return result
-
-if __name__ == "__main__":
-    mergeSort = MergeSort()
-    print mergeSort.merge_sort([6, 5, 4, 3, 2, 1])

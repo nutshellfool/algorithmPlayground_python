@@ -58,13 +58,15 @@ class SingleLinkedList(object):
         Traversal the whole list, and print nodes
         """
         if self.head is None: return
+        result = []
 
         node = self.head
         node = node.next
         while node:
-            print(node.value)
+            # print(node.value)
+            result.append(node.value)
             node = node.next
-
+        return result
 
     def clear_list(self):
         """
@@ -84,26 +86,7 @@ class SingleLinkedList(object):
         while walker and runner and runner.next:
             walker = walker.next
             runner = runner.next.next
-            if walker == runner: return True
+            if walker == runner:
+                return True
 
         return False
-
-
-if __name__ == '__main__':
-    single_linkedlist = SingleLinkedList()
-    single_linkedlist.append_node_to_tail(1)
-    single_linkedlist.traversal_list()
-
-    # find_hc_node = single_linkedlist.find_node(1)
-    # if find_hc_node is not None:
-    #     print find_hc_node.value
-    # find_fc_node = single_linkedlist.find_node(2)
-    # if find_fc_node is None:
-    #     print("find fail case passed")
-    # print "*" * 10
-    # single_linkedlist.delete_node(1)
-    # single_linkedlist.traversal_list()
-    # print "*" * 10
-    # single_linkedlist.append_node_to_tail(2)
-    # single_linkedlist.traversal_list()
-
