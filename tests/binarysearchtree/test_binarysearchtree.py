@@ -46,7 +46,7 @@ class TestBinarySearchTree(TestCase):
     def test__inorder_traversal(self):
         tree = self.construct_bst()
         nodes = []
-        tree._inorder_traversal(tree.root, nodes)
+        tree._preorder_traversal(tree.root, nodes)
         self.assertIsNotNone(nodes)
         self.assertEqual(len(nodes), 3)
         self.assertEqual(nodes, [5, 3, 7])
@@ -54,7 +54,7 @@ class TestBinarySearchTree(TestCase):
     def test__inorder_traversal_none_root_case(self):
         tree = BinarySearchTree()
         nodes = []
-        tree._inorder_traversal(tree.root, nodes)
+        tree._preorder_traversal(tree.root, nodes)
         self.assertEqual(len(nodes), 0)
         self.assertEqual(nodes, [])
 

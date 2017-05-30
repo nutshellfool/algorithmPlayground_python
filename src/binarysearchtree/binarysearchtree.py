@@ -38,15 +38,15 @@ class BinarySearchTree(object):
         if self.root is None:
             return []
         result = []
-        self._inorder_traversal(self.root, result)
+        self._preorder_traversal(self.root, result)
         return result
 
-    def _inorder_traversal(self, node, result):
+    def _preorder_traversal(self, node, result):
         if node is None:
             return
         result.append(node.val)
-        self._inorder_traversal(node.left, result)
-        self._inorder_traversal(node.right, result)
+        self._preorder_traversal(node.left, result)
+        self._preorder_traversal(node.right, result)
 
     def find_node(self):
         pass
