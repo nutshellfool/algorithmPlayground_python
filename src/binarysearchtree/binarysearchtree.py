@@ -36,15 +36,17 @@ class BinarySearchTree(object):
 
     def print_tree(self):
         if self.root is None:
-            print []
-        self._inorder_traversal(self.root)
+            return []
+        result = []
+        self._inorder_traversal(self.root, result)
+        return result
 
-    def _inorder_traversal(self, node):
+    def _inorder_traversal(self, node, result):
         if node is None:
             return
-        print node.val
-        self._inorder_traversal(node.left)
-        self._inorder_traversal(node.right)
+        result.append(node.val)
+        self._inorder_traversal(node.left, result)
+        self._inorder_traversal(node.right, result)
 
     def find_node(self):
         pass
@@ -54,8 +56,8 @@ class BinarySearchTree(object):
 
     def dfs(self):
         if self.root is None:
-            return
-
+            return []
+        result = []
         stack = []
         visited = set()
         stack.append(self.root)
@@ -65,18 +67,20 @@ class BinarySearchTree(object):
             visited.add(node)
 
             # do something
-            print node.val
+            result.append(node.val)
 
             # if not visited.__contains__(node):
             if node.left and node.left not in visited:
                 stack.append(node.left)
             if node.right and node.right not in visited:
                 stack.append(node.right)
+        return result
 
     def bfs(self):
         if self.root is None:
-            return
+            return []
 
+        result = []
         queue = deque()
         visited = set()
         queue.append(self.root)
@@ -84,48 +88,53 @@ class BinarySearchTree(object):
         while queue:
             node = queue.popleft()
             # do something
-            print(node.val)
+            result.append(node.val)
             if node.left and node.left not in visited:
                 queue.append(node.left)
             if node.right and node.right not in visited:
                 queue.append(node.right)
+        return result
 
     def wfs(self):
         if self.root is None:
-            return
+            return []
+        result = []
         priority_queue = PriorityQueue()
         visited = set()
         priority_queue.put(self.root)
 
         while not priority_queue.empty():
             node = priority_queue.get()
-            print(node.val)
+            result.append(node.val)
 
             if node.left and node.left not in visited:
                 priority_queue.put(node.left)
             if node.right and node.right not in visited:
                 priority_queue.put(node.right)
+        return result
 
-if __name__ == '__main__':
-    bst = BinarySearchTree()
-    bst.add_node(3)
-    bst.add_node(1)
-    bst.add_node(2)
-    bst.add_node(0)
-    bst.add_node(5)
-    bst.add_node(4)
-    bst.add_node(6)
 
-    bst.print_tree()
-    print "*" * 20
-    print('DFS:')
-    print "*" * 20
-    bst.dfs()
-    print "*" * 20
-    print ('BFS:')
-    print "*" * 20
-    bst.bfs()
-    print("*" * 20)
-    print("heuristic Search: Weight First Search")
-    print("*" * 20)
-    bst.wfs()
+# if __name__ == '__main__':
+#     bst = BinarySearchTree()
+#     bst.add_node(3)
+#     bst.add_node(1)
+#     bst.add_node(2)
+#     bst.add_node(0)
+#     bst.add_node(5)
+#     bst.add_node(4)
+#     bst.add_node(6)
+#
+#     tree_nodes = bst.print_tree()
+#     print tree_nodes
+#     print "*" * 20
+#     print('DFS:')
+#     print "*" * 20
+#     print(bst.dfs())
+#     print "*" * 20
+#     print ('BFS:')
+#     print "*" * 20
+#     print(bst.bfs())
+#     print("*" * 20)
+#     print("heuristic Search: Weight First Search")
+#     print("*" * 20)
+#     print(bst.wfs())
