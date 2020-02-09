@@ -52,7 +52,6 @@ class SingleLinkedList(object):
 
         node.next = node.next.next if node.next else None
 
-
     def traversal_list(self):
         """
         Traversal the whole list, and print nodes

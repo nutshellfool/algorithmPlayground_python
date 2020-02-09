@@ -113,7 +113,6 @@ class BinarySearchTree(object):
                 priority_queue.put(node.right)
         return result
 
-
 # if __name__ == '__main__':
 #     bst = BinarySearchTree()
 #     bst.add_node(3)
