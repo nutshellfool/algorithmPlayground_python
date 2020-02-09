@@ -49,6 +49,7 @@ class BinarySearchTree(object):
         self._preorder_traversal(node.right, result)
 
     def find_node(self):
+        # TODO
         pass
 
     def delete_tree(self):
@@ -113,27 +114,3 @@ class BinarySearchTree(object):
                 priority_queue.put(node.right)
         return result
 
-# if __name__ == '__main__':
-#     bst = BinarySearchTree()
-#     bst.add_node(3)
-#     bst.add_node(1)
-#     bst.add_node(2)
-#     bst.add_node(0)
-#     bst.add_node(5)
-#     bst.add_node(4)
-#     bst.add_node(6)
-#
-#     tree_nodes = bst.print_tree()
-#     print tree_nodes
-#     print "*" * 20
-#     print('DFS:')
-#     print "*" * 20
-#     print(bst.dfs())
-#     print "*" * 20
-#     print ('BFS:')
-#     print "*" * 20
-#     print(bst.bfs())
-#     print("*" * 20)
-#     print("heuristic Search: Weight First Search")
-#     print("*" * 20)
-#     print(bst.wfs())
