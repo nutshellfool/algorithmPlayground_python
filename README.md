@@ -2,11 +2,25 @@
 
 [![Build Status](https://travis-ci.org/nutshellfool/algorithmPlayground_python.svg?branch=master)](https://travis-ci.org/nutshellfool/algorithmPlayground_python)
  
-This is a Python edition, and Java edition is also avilable [algorithmPlayground](https://github.com/nutshellfool/algorithmPlayground).   
+This is a Python edition, and Java edition is also available [algorithmPlayground](https://github.com/nutshellfool/algorithmPlayground).   
 Currently, this is a pure Python project and which supports the PyCharm IDE , so you can feel free to open this project in Python.  
-The unittest is using buildin unittest (maybe change this in future),  and you can run all testcase by   
-```python -m unittest discover -s ./tests ``` (of course, you should run this command under the root path of this project)
-
+The unittest is using build-in unittest (maybe change this in future),  and you can run all test-cases by   
+```python -m unittest discover -s ./tests ``` (of course, you should run this command under the root path of this project)  
+about the coverage under Python project:  
+to gathering and report the coverage measurement, we can install [coverage package](https://github.com/nedbat/coveragepy).  
+install package:  
+```BASH
+pip install coverage
+```  
+run test suites and gathering coverage information:  
+```BASH
+coverage run -m unittest discover
+```
+show the coverage report:  
+```BASH
+coverage report -m
+```
+to see more usage please refer [coverage docs](https://coverage.readthedocs.io/en/stable/)
 
 ## Algorithm & Data Structure problem / solution sets
 
@@ -82,7 +96,7 @@ The unittest is using buildin unittest (maybe change this in future),  and you c
 - [ ] [Pow(x, n)](https://leetcode.com/problems/powx-n/)
 - [ ] [Generate Parentheses](https://leetcode.com/problems/generate-parentheses/)
 
-### Divid & Conquer
+### Divide & Conquer
 
 - [ ] [Pow(x, n)](https://leetcode.com/problems/powx-n/)
 - [ ] [Majority Element](https://leetcode.com/problems/majority-element/)

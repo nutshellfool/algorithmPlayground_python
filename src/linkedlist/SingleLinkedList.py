@@ -31,7 +31,8 @@ class SingleLinkedList(object):
         :param value:
         :return: the target value if found, none otherwise
         """
-        if self.head is None: return None
+        if self.head is None:
+            return None
         node = self.head
         while node:
             if node.value == value:
@@ -45,7 +46,8 @@ class SingleLinkedList(object):
         Delete the node by value
         :param value:
         """
-        if self.head is None: return
+        if self.head is None:
+            return
         node = self.head
         while node.next and node.next.value != value:
             node = node.next
@@ -56,7 +58,8 @@ class SingleLinkedList(object):
         """
         Traversal the whole list, and print nodes
         """
-        if self.head is None: return
+        if self.head is None:
+            return
         result = []
 
         node = self.head
@@ -78,7 +81,8 @@ class SingleLinkedList(object):
         Determine if the LinkedList has cycle
         :return: true if has, false otherwise
         """
-        if self.head is None: return True
+        if self.head is None:
+            return True
 
         walker = self.head
         runner = self.head
