@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
 
+from src.linkedlist.SingleLinkedList import SingleLinkedNode
+
+
 # Definition for singly-linked list.
-
-
 # class ListNode(object):
 #     def __init__(self, x):
 #         self.val = x
 #         self.next = None
-from src.linkedlist.SingleLinkedList import SingleLinkedNode
 
 
 class Solution(object):
