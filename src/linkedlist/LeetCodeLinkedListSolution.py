@@ -40,3 +40,19 @@ class Solution(object):
             node.next = l1
 
         return dummy_node.next
+
+    def mergeKLists(self, lists):
+        """
+        :type lists: List[ListNode]
+        :rtype: ListNode
+        """
+        if lists is None or len(lists) == 0:
+            return None
+        if len(lists) == 1:
+            return lists[0]
+
+        mid = len(lists) // 2
+        left_node = self.mergeKLists(lists[:mid])
+        right_node = self.mergeKLists(lists[mid:])
+
+        return self.mergeTwoLists(left_node, right_node)

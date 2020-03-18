@@ -33,3 +33,36 @@ class TestLeetCodeSolution(TestCase):
         self.assertEqual(4, head_node.next.next.next.next.value)
         self.assertEqual(5, head_node.next.next.next.next.next.value)
         self.assertIsNone(head_node.next.next.next.next.next.next)
+
+    def test_mergeTwoListsNoneParams(self):
+        head_node = self.solution.mergeTwoLists(None, None)
+        self.assertIsNone(head_node)
+
+    def test_mergeTwoListP1None(self):
+        head_node = self.solution.mergeTwoLists(None, self.list_alpha.head.next)
+        self.assertIsNotNone(head_node)
+        self.assertEqual(self.list_alpha.head.next, head_node)
+
+    def test_mergeKLists(self):
+        self.list_gama = SingleLinkedList()
+        self.list_gama.append_node_to_tail(0)
+
+        lists = [self.list_alpha.head.next, self.list_beta.head.next, self.list_gama.head.next]
+        head_node = self.solution.mergeKLists(lists)
+        self.assertIsNotNone(head_node)
+        self.assertEqual(0, head_node.value)
+        self.assertEqual(1, head_node.next.value)
+        self.assertEqual(1, head_node.next.next.value)
+        self.assertEqual(2, head_node.next.next.next.value)
+        self.assertEqual(3, head_node.next.next.next.next.value)
+        self.assertEqual(4, head_node.next.next.next.next.next.value)
+        self.assertEqual(5, head_node.next.next.next.next.next.next.value)
+        self.assertIsNone(head_node.next.next.next.next.next.next.next)
+
+    def test_mergeKLists_none(self):
+        head_node = self.solution.mergeKLists(None)
+        self.assertIsNone(head_node)
+
+    def test_mergeKList_empty(self):
+        head_node = self.solution.mergeKLists([])
+        self.assertEqual(None, head_node)

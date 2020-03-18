@@ -34,7 +34,7 @@ to see more usage please refer [coverage docs](https://coverage.readthedocs.io/e
 - [ ] [Reverse Nodes in k-Group](https://leetcode.com/problems/reverse-nodes-in-k-group/)
 - [ ] [Middle of the Linked List](https://leetcode.com/problems/middle-of-the-linked-list/)
 - [x] [Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/)
-- [ ] [Merge k Sorted Lists](https://leetcode.com/problems/merge-k-sorted-lists/)
+- [x] [Merge k Sorted Lists](https://leetcode.com/problems/merge-k-sorted-lists/)
 
 ### Stack & Queue
 
