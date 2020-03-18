@@ -24,7 +24,13 @@ to see more usage please refer [coverage docs](https://coverage.readthedocs.io/e
 
 ## Algorithm & Data Structure problem / solution sets
 
-### Array & Linked List
+### Array
+
+- [ ] [Container With Most Water](https://leetcode.com/problems/container-with-most-water)
+- [ ] [Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/)
+- [ ] [Maximum Swap](https://leetcode.com/problems/maximum-swap/)
+
+###Linked List
 
 - [ ] [Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/)  
 - [ ] [Swap Nodes in Pairs](https://leetcode.com/problems/swap-nodes-in-pairs/)
@@ -35,6 +41,10 @@ to see more usage please refer [coverage docs](https://coverage.readthedocs.io/e
 - [ ] [Middle of the Linked List](https://leetcode.com/problems/middle-of-the-linked-list/)
 - [x] [Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/)
 - [x] [Merge k Sorted Lists](https://leetcode.com/problems/merge-k-sorted-lists/)
+- [ ] [Add Two Numbers](https://leetcode.com/problems/add-two-numbers/)
+- [ ] [Add Two Numbers II](https://leetcode.com/problems/add-two-numbers-ii/)
+- [ ] [Reorder List](https://leetcode.com/problems/reorder-list/)
+
 
 ### Stack & Queue
 
@@ -71,16 +81,22 @@ to see more usage please refer [coverage docs](https://coverage.readthedocs.io/e
 - [ ] [Find Median from Data Stream](https://leetcode.com/problems/find-median-from-data-stream/)
 - [ ] [Sliding Window Median](https://leetcode.com/problems/sliding-window-median/)
 
+**possible**
+- [ ] [Lexicographical Numbers](https://leetcode.com/problems/lexicographical-numbers/)
+- [ ] [K-th Smallest in Lexicographical Order](https://leetcode.com/problems/k-th-smallest-in-lexicographical-order/)
+
 ### Binary Search
 
 - [ ] [Pow(x, n)](https://leetcode.com/problems/powx-n/)
 - [ ] [Sqrt(x)](https://leetcode.com/problems/sqrtx/)
+- [ ] [Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/)
 
 ### Breath First Search
 
 - [ ] [Binary Tree Level Order Traversal](https://leetcode.com/problems/binary-tree-level-order-traversal/)
 - [ ] [Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/)
 - [ ] [Minimum Depth of Binary Tree](https://leetcode.com/problems/minimum-depth-of-binary-tree/)
+- [ ] [Binary Tree Right Side View](https://leetcode.com/problems/binary-tree-right-side-view/)
 
 ### Depth First Search
 
@@ -88,6 +104,7 @@ to see more usage please refer [coverage docs](https://coverage.readthedocs.io/e
 - [ ] [Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/)
 - [ ] [Minimum Depth of Binary Tree](https://leetcode.com/problems/minimum-depth-of-binary-tree/)
 - [ ] [Generate Parentheses](https://leetcode.com/problems/generate-parentheses/)
+- [ ] [Binary Tree Right Side View](https://leetcode.com/problems/binary-tree-right-side-view/)
 
 ## Basic algorithm thinking
 
@@ -105,7 +122,12 @@ to see more usage please refer [coverage docs](https://coverage.readthedocs.io/e
 
 ### Greedy
 
+- [ ] [Candy](https://leetcode.com/problems/candy/)
+
 ### Backtracking
+
+- [ ] [Restore IP Addresses](https://leetcode.com/problems/restore-ip-addresses/)
+- [ ] [Android Unlock Patterns](https://leetcode.com/problems/android-unlock-patterns/)
 
 ### Dynamic Programming
 
@@ -122,6 +144,8 @@ to see more usage please refer [coverage docs](https://coverage.readthedocs.io/e
 - [ ] [Best Time to Buy and Sell Stock with Transaction Fee](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/)
 - [ ] [Longest Increasing Subsequence](https://leetcode.com/problems/longest-increasing-subsequence/)
 - [ ] [Coin Change](https://leetcode.com/problems/coin-change/)
+- [ ] [Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/)
+- [ ] [Android Unlock Patterns](https://leetcode.com/problems/android-unlock-patterns/)
 
 ## Advanced data structure & algorithm
 
@@ -143,6 +167,7 @@ to see more usage please refer [coverage docs](https://coverage.readthedocs.io/e
 - [ ] [Number of 1 Bits](https://leetcode.com/problems/number-of-1-bits/)
 - [ ] [Power of Two](https://leetcode.com/problems/power-of-two/)
 - [ ] [Counting Bits](https://leetcode.com/problems/counting-bits/)
+- [ ] [UTF-8 Validation](https://leetcode.com/problems/utf-8-validation/)
 
 ## System design Problem / Solution sets
 
@@ -153,3 +178,19 @@ to see more usage please refer [coverage docs](https://coverage.readthedocs.io/e
 ##### LRU Cache
 
 - [ ] [LRU Cache](https://leetcode.com/problems/lru-cache/)
+
+### Design Twitter (news feed system)
+
+the full system design solution could be found in this blog(Mandarin) [如何设计一个精简版的微博（或者Twitter）？](https://blogs.lirui.me/posts/b637e0c8/)  
+and part of the code design problem:
+
+- [ ] [Design Twitter](https://leetcode.com/problems/design-twitter/)
+
+### Design TinyURL
+
+The solution could be found in this blog(Mandarin)[如何设计一个短网址服务](https://blogs.lirui.me/posts/63f58b56/)
+and part of the code design problem:
+
+#### Encode and Decode TinyURL
+
+- [ ] [Encode and Decode TinyURL](https://leetcode.com/problems/encode-and-decode-tinyurl/)
