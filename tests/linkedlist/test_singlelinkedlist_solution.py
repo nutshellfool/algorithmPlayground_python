@@ -1,5 +1,6 @@
 from unittest import TestCase
-from src.linkedlist.SingleLinkedList import SingleLinkedList
+
+from src.linkedlist.singlelinkedlist_solution import SingleLinkedList
 
 
 class TestSingleLinkedList(TestCase):

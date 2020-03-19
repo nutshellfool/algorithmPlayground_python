@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from src.linkedlist.SingleLinkedList import SingleLinkedNode
+from src.linkedlist.singlelinkedlist_solution import SingleLinkedNode
 
 
 # Definition for singly-linked list.

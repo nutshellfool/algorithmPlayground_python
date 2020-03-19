@@ -1,7 +1,7 @@
 from unittest import TestCase
 
-from src.linkedlist.LeetCodeLinkedListSolution import Solution
-from src.linkedlist.SingleLinkedList import SingleLinkedList
+from src.linkedlist.leetcode_linkedlist_solution import Solution
+from src.linkedlist.singlelinkedlist_solution import SingleLinkedList
 
 
 class TestLeetCodeSolution(TestCase):

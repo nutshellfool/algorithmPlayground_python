@@ -194,3 +194,50 @@ and part of the code design problem:
 #### Encode and Decode TinyURL
 
 - [ ] [Encode and Decode TinyURL](https://leetcode.com/problems/encode-and-decode-tinyurl/)
+
+## Coding Convention
+
+### Project structure
+
+#### Main parts
+
+* Source sub-project (src)
+
+under the source project the package is named by data structure categories
+(such as linkedList, Stack, Queue, BinarySearchTree, PriorityQueue ...)
+
+> Why use "Arrays" instead of "Array"?  
+> Oops, if named as Array in pyCharm IDE, they can not find the test case module under array package.
+> But it works under cli
+
+* Unittest sub-project (tests)
+
+the package naming is exactly ***same*** as the source project
+
+### naming
+
+#### module file naming
+
+##### source project module file
+
+<problem_set_from>_<category>_solution.py 
+For example:
+
+leetcode_arrays_solution.py
+
+this module file name means:
+
+1. problem set from "[leetcode](https://leetcode.com/problemset/)"
+2. these problems are "arrays" type
+
+> If the problem set from nowhere, this part could be left blank.
+
+##### unittest project module file
+
+Same as the source project, add the prefix "test":
+
+test_<problem_set_from>_<category>_solution.py
+
+### Class naming
+
+Following the [Google style guide (Python) - file naming](http://google.github.io/styleguide/pyguide.html#3163-file-naming)

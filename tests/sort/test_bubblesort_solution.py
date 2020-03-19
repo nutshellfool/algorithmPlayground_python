@@ -1,5 +1,6 @@
 from unittest import TestCase
-from src.sort.bubblesort import BubbleSort
+
+from src.sort.bubblesort_solution import BubbleSort
 
 
 class TestBubbleSort(TestCase):

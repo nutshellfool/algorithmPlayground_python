@@ -1,5 +1,6 @@
 from unittest import TestCase
-from src.sort.insertionsort import InsertionSort
+
+from src.sort.insertionsort_solution import InsertionSort
 
 
 class TestInsertionSort(TestCase):
