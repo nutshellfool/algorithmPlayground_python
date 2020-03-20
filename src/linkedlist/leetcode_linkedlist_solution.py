@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+from collections import deque
+
 from src.linkedlist.singlelinkedlist_solution import SingleLinkedNode
 
 
@@ -87,3 +89,36 @@ class Solution(object):
             carry = carry // 10
 
         return dummy_node.next
+
+    def addTwoNumbers2(self, l1, l2):
+        """
+        :type l1: ListNode
+        :type l2: ListNode
+        :rtype: ListNode
+        """
+        if not l1:
+            return l2
+        if not l2:
+            return l1
+
+        stack_l1 = deque()
+        while l1 is not None:
+            stack_l1.append(l1.value)
+            l1 = l1.next
+        stack_l2 = deque()
+        while l2 is not None:
+            stack_l2.append(l2.value)
+            l2 = l2.next
+        dummy_node = None
+        carry = 0
+        while len(stack_l1) != 0 or len(stack_l2) != 0 or carry != 0:
+            if len(stack_l1) != 0:
+                carry += stack_l1.pop()
+            if len(stack_l2) != 0:
+                carry += stack_l2.pop()
+            new_node = SingleLinkedNode()
+            new_node.value = carry % 10
+            new_node.next = dummy_node
+            dummy_node = new_node
+            carry //= 10
+        return dummy_node

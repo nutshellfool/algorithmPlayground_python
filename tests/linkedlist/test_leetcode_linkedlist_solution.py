@@ -111,3 +111,50 @@ class TestLeetCodeSolution(TestCase):
     def test_addTwoNumbers_none_l2_param(self):
         head = self.solution.addTwoNumbers(self.list_alpha.head.next, None)
         self.assertEqual(self.list_alpha.head.next, head)
+
+    def test_addTwoNumbers2(self):
+        l1 = SingleLinkedList()
+        l1.append_node_to_tail(7)
+        l1.append_node_to_tail(2)
+        l1.append_node_to_tail(4)
+        l1.append_node_to_tail(3)
+
+        l2 = SingleLinkedList()
+        l2.append_node_to_tail(5)
+        l2.append_node_to_tail(6)
+        l2.append_node_to_tail(4)
+        head = self.solution.addTwoNumbers2(l1.head.next, l2.head.next)
+        self.assertIsNotNone(head)
+        self.assertEqual(7, head.value)
+        self.assertEqual(8, head.next.value)
+        self.assertEqual(0, head.next.next.value)
+        self.assertEqual(7, head.next.next.next.value)
+        self.assertIsNone(head.next.next.next.next)
+
+    def test_addTwoNumbers2_more_digits(self):
+        l1 = SingleLinkedList()
+        l1.append_node_to_tail(9)
+        l1.append_node_to_tail(9)
+        l1.append_node_to_tail(9)
+
+        l2 = SingleLinkedList()
+        l2.append_node_to_tail(2)
+        head = self.solution.addTwoNumbers2(l1.head.next, l2.head.next)
+        self.assertIsNotNone(head)
+        self.assertEqual(1, head.value)
+        self.assertEqual(0, head.next.value)
+        self.assertEqual(0, head.next.next.value)
+        self.assertEqual(1, head.next.next.next.value)
+        self.assertIsNone(head.next.next.next.next)
+
+    def test_addTwoNumbers2_none_params(self):
+        head = self.solution.addTwoNumbers2(None, None)
+        self.assertIsNone(head)
+
+    def test_addTwoNumbers2_none_l1_param(self):
+        head = self.solution.addTwoNumbers2(None, self.list_alpha.head.next)
+        self.assertEqual(self.list_alpha.head.next, head)
+
+    def test_addTwoNumbers2_none_l2_param(self):
+        head = self.solution.addTwoNumbers2(self.list_alpha.head.next, None)
+        self.assertEqual(self.list_alpha.head.next, head)
