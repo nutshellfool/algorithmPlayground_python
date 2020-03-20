@@ -56,3 +56,34 @@ class Solution(object):
         right_node = self.mergeKLists(lists[mid:])
 
         return self.mergeTwoLists(left_node, right_node)
+
+    def addTwoNumbers(self, l1, l2):
+        """
+        :type l1: ListNode
+        :type l2: ListNode
+        :rtype: ListNode
+        """
+        if not l1:
+            return l2
+        if not l2:
+            return l1
+
+        dummy_node = SingleLinkedNode()
+        node = dummy_node
+        carry = 0
+        while l1 is not None or l2 is not None or carry != 0:
+            if l1 is not None:
+                carry += l1.value
+                l1 = l1.next
+            if l2 is not None:
+                carry += l2.value
+                l2 = l2.next
+
+            temp_node = SingleLinkedNode()
+            temp_node.value = carry % 10
+            node.next = temp_node
+
+            node = node.next
+            carry = carry // 10
+
+        return dummy_node.next

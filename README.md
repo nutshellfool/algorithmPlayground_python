@@ -41,7 +41,7 @@ to see more usage please refer [coverage docs](https://coverage.readthedocs.io/e
 - [ ] [Middle of the Linked List](https://leetcode.com/problems/middle-of-the-linked-list/)
 - [x] [Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/)
 - [x] [Merge k Sorted Lists](https://leetcode.com/problems/merge-k-sorted-lists/)
-- [ ] [Add Two Numbers](https://leetcode.com/problems/add-two-numbers/)
+- [x] [Add Two Numbers](https://leetcode.com/problems/add-two-numbers/)
 - [ ] [Add Two Numbers II](https://leetcode.com/problems/add-two-numbers-ii/)
 - [ ] [Reorder List](https://leetcode.com/problems/reorder-list/)
 
