@@ -2,7 +2,8 @@
 
 
 class Solution(object):
-    def maxArea(self, height):
+    @staticmethod
+    def maxArea(height):
         """
         :type height: List[int]
         :rtype: int
@@ -19,7 +20,8 @@ class Solution(object):
                 right_pointer -= 1
         return max_area
 
-    def maxArea_brutal_force(self, height):
+    @staticmethod
+    def maxArea_brutal_force(height):
         """
         :type height: List[int]
         :rtype: int
@@ -32,3 +34,76 @@ class Solution(object):
                 max_area = max(max_area, min(height[i], height[j]) * (j - i))
 
         return max_area
+
+    @staticmethod
+    def trap(height):
+        """
+        :type height: List[int]
+        :rtype: int
+        """
+        if not height or len(height) < 3:
+            return 0
+        unit_of_trapped = 0
+        left_max, left, right_max, right = 0, 0, 0, len(height) - 1
+
+        while left < right:
+            if height[left] < height[right]:
+                if height[left] >= left_max:
+                    left_max = height[left]
+                else:
+                    unit_of_trapped += left_max - height[left]
+                left += 1
+            else:
+                if height[right] >= right_max:
+                    right_max = height[right]
+                else:
+                    unit_of_trapped += right_max - height[right]
+                right -= 1
+
+        return unit_of_trapped
+
+    @staticmethod
+    def trap_brutal_force(height):
+        """
+        :type height: List[int]
+        :rtype: int
+        """
+        if not height or len(height) < 3:
+            return 0
+        unit_of_trapped = 0
+        left_max, right_max = 0, 0
+        for i in range(1, len(height) - 1):
+
+            for j in range(i):
+                left_max = max(left_max, height[j])
+
+            for k in range(i, len(height)):
+                right_max = max(right_max, height[k])
+
+            bucket_min = min(left_max, right_max)
+            unit_of_trapped += bucket_min - height[i]
+
+        return unit_of_trapped
+
+    @staticmethod
+    def trap_dynamic_programming(height):
+        """
+        :type height: List[int]
+        :rtype: int
+        """
+        if not height or len(height) < 3:
+            return 0
+        unit_of_trapped = 0
+        left_max, right_max = [0] * (len(height) + 1), [0] * (len(height) + 1)
+
+        left_max[0], right_max[len(height) - 1] = height[0], height[len(height) - 1]
+        for i in xrange(1, len(height)):
+            left_max[i] = max(left_max[i - 1], height[i])
+
+        for i in xrange(len(height) - 1 - 1, 0, -1):
+            right_max[i] = max(right_max[i + 1], height[i])
+
+        for i in xrange(1, len(height) - 1):
+            bucket_min = min(left_max[i], right_max[i])
+            unit_of_trapped += bucket_min - height[i]
+        return unit_of_trapped

@@ -27,7 +27,7 @@ to see more usage please refer [coverage docs](https://coverage.readthedocs.io/e
 ### Array
 
 - [x] [Container With Most Water](https://leetcode.com/problems/container-with-most-water)
-- [ ] [Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/)
+- [x] [Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/)
 - [ ] [Maximum Swap](https://leetcode.com/problems/maximum-swap/)
 
 ###Linked List
