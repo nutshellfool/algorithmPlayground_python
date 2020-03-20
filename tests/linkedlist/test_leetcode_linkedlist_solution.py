@@ -158,3 +158,27 @@ class TestLeetCodeSolution(TestCase):
     def test_addTwoNumbers2_none_l2_param(self):
         head = self.solution.addTwoNumbers2(self.list_alpha.head.next, None)
         self.assertEqual(self.list_alpha.head.next, head)
+
+    def test_middleNode(self):
+        node = self.solution.middleNode(self.list_alpha.head.next)
+        self.assertIsNotNone(node)
+        self.assertEqual(2, node.value)
+
+    def test_middleNode_none_param(self):
+        node = self.solution.middleNode(None)
+        self.assertIsNone(node)
+
+    def test_middleNode_node_length_even(self):
+        list_length_even = SingleLinkedList()
+        list_length_even.append_node_to_tail(1)
+        list_length_even.append_node_to_tail(2)
+        list_length_even.append_node_to_tail(3)
+        list_length_even.append_node_to_tail(4)
+        node = self.solution.middleNode(list_length_even.head.next)
+        self.assertIsNotNone(node)
+        self.assertEqual(3, node.value)
+
+    def test_middleNode_node_length_odd(self):
+        node = self.solution.middleNode(self.list_beta.head.next)
+        self.assertIsNotNone(node)
+        self.assertEqual(3, node.value)

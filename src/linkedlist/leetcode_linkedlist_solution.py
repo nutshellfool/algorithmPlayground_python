@@ -122,3 +122,18 @@ class Solution(object):
             dummy_node = new_node
             carry //= 10
         return dummy_node
+
+    def middleNode(self, head):
+        """
+        :type head: ListNode
+        :rtype: ListNode
+        """
+        if not head or not head.next:
+            return head
+
+        slow, fast = head, head
+        while slow and fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+
+        return slow
