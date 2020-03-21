@@ -137,3 +137,28 @@ class Solution(object):
             fast = fast.next.next
 
         return slow
+
+    def reverseList(self, head):
+        """
+        :type head: ListNode
+        :rtype: ListNode
+        """
+        if not head or not head.next:
+            return head
+
+        node = head.next
+        p = self.reverseList(node)
+        node.next = head
+        head.next = None
+        return p
+
+    def reverseList_iteration(self, head):
+        if not head or not head.next:
+            return head
+        pre, cur = None, head
+        while cur:
+            temp = cur.next
+            cur.next = pre
+            pre = cur
+            cur = temp
+        return pre

@@ -1,7 +1,7 @@
 from unittest import TestCase
 
 from src.linkedlist.leetcode_linkedlist_solution import Solution
-from src.linkedlist.singlelinkedlist_solution import SingleLinkedList
+from src.linkedlist.singlelinkedlist_solution import SingleLinkedList, SingleLinkedNode
 
 
 class TestLeetCodeSolution(TestCase):
@@ -182,3 +182,37 @@ class TestLeetCodeSolution(TestCase):
         node = self.solution.middleNode(self.list_beta.head.next)
         self.assertIsNotNone(node)
         self.assertEqual(3, node.value)
+
+    def test_reverseList(self):
+        node = self.solution.reverseList(self.list_alpha.head.next)
+        self.assertIsNotNone(node)
+        self.assertEqual(4, node.value)
+        self.assertEqual(2, node.next.value)
+        self.assertEqual(1, node.next.next.value)
+        self.assertIsNone(node.next.next.next)
+
+    def test_reverseList_none(self):
+        node = self.solution.reverseList(None)
+        self.assertIsNone(node)
+
+    def test_reverseList_single_node(self):
+        input_node = SingleLinkedNode()
+        node = self.solution.reverseList(input_node)
+        self.assertEqual(input_node, node)
+
+    def test_reverseList_iterate(self):
+        node = self.solution.reverseList_iteration(self.list_alpha.head.next)
+        self.assertIsNotNone(node)
+        self.assertEqual(4, node.value)
+        self.assertEqual(2, node.next.value)
+        self.assertEqual(1, node.next.next.value)
+        self.assertIsNone(node.next.next.next)
+
+    def test_reverseList_iterate_none(self):
+        node = self.solution.reverseList_iteration(None)
+        self.assertIsNone(node)
+
+    def test_reverseList_iterate_single_node(self):
+        input_node = SingleLinkedNode()
+        node = self.solution.reverseList_iteration(input_node)
+        self.assertEqual(input_node, node)

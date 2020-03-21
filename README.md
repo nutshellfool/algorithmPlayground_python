@@ -32,7 +32,7 @@ to see more usage please refer [coverage docs](https://coverage.readthedocs.io/e
 
 ###Linked List
 
-- [ ] [Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/)  
+- [x] [Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/)  
 - [ ] [Swap Nodes in Pairs](https://leetcode.com/problems/swap-nodes-in-pairs/)
 - [x] [Linked List Cycle](https://leetcode.com/problems/linked-list-cycle/)
 - [ ] [Linked List Cycle II](https://leetcode.com/problems/linked-list-cycle-ii/)
