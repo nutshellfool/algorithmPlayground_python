@@ -22,6 +22,11 @@ class TestLeetCodeStackSolution(TestCase):
         is_valid = self.solution.isValid(input_string)
         self.assertFalse(is_valid)
 
+    def test_isValid_invalid_case1(self):
+        input_string = ']'
+        is_valid = self.solution.isValid(input_string)
+        self.assertFalse(is_valid)
+
     def test_isValid_none_param(self):
         is_valid = self.solution.isValid(None)
         self.assertFalse(is_valid)
@@ -42,6 +47,11 @@ class TestLeetCodeStackSolution(TestCase):
 
     def test_isValid_instinct_invalid_case(self):
         input_string = '(]'
+        is_valid = self.solution.is_valid_instinct(input_string)
+        self.assertFalse(is_valid)
+
+    def test_isValid_instinct_invalid_case1(self):
+        input_string = ']'
         is_valid = self.solution.is_valid_instinct(input_string)
         self.assertFalse(is_valid)
 

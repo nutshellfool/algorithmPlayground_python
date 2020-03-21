@@ -15,7 +15,7 @@ class Solution(object):
         map = {')': '(', '}': '{', ']': '['}
         for i, v in enumerate(s):
             if v in map:
-                if stack and stack.pop() != map[v]:
+                if not stack or (stack and stack.pop() != map[v]):
                     return False
             else:
                 stack.append(v)
@@ -39,7 +39,7 @@ class Solution(object):
             elif v == '[':
                 stack.append(']')
             else:
-                if len(stack) != 0 and stack.pop() != v:
+                if not stack or (len(stack) != 0 and stack.pop() != v):
                     return False
 
         return len(stack) == 0
