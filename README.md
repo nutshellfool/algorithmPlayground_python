@@ -48,7 +48,7 @@ to see more usage please refer [coverage docs](https://coverage.readthedocs.io/e
 
 ### Stack & Queue
 
-- [ ] [Valid Parentheses](https://leetcode.com/problems/valid-parentheses/)
+- [x] [Valid Parentheses](https://leetcode.com/problems/valid-parentheses/)
 - [ ] [Implement Stack using Queues](https://leetcode.com/problems/implement-stack-using-queues/)
 - [ ] [Implement Queue using Stacks](https://leetcode.com/problems/implement-queue-using-stacks/)
 
