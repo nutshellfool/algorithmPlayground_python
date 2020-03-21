@@ -192,3 +192,26 @@ class Solution(object):
             prev.next = prev.next.next
 
         return head
+
+    def swapPairs(self, head):
+        """
+        :type head: ListNode
+        :rtype: ListNode
+        """
+        if not head or not head.next:
+            return head
+
+        node = head.next
+        head.next = self.swapPairs(head.next.next)
+        node.next = head
+        return node
+
+    def swapPairs_iteration(self, head):
+        dummy = pre = SingleLinkedNode()
+        pre.next = head
+        while pre.next and pre.next.next:
+            a = pre.next
+            b = a.next
+            pre.next, a.next, b.next = b, b.next, a
+            pre = a
+        return dummy.next

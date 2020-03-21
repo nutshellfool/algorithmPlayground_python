@@ -250,3 +250,39 @@ class TestLeetCodeSolution(TestCase):
         head = self.solution.removeNthFromEnd(self.list_alpha.head.next, 4)
         self.assertIsNotNone(head)
         self.assertEqual(self.list_alpha.head.next, head)
+
+    def test_swapPairs(self):
+        head = self.solution.swapPairs(self.list_alpha.head.next)
+        self.assertIsNotNone(head)
+        self.assertEqual(2, head.value)
+        self.assertEqual(1, head.next.value)
+        self.assertEqual(4, head.next.next.value)
+        self.assertIsNone(head.next.next.next)
+
+    def test_swapPairs_none_param(self):
+        head = self.solution.swapPairs(None)
+        self.assertIsNone(head)
+
+    def test_swapPairs_one_node(self):
+        input_node = SingleLinkedNode()
+        input_node.value = 1
+        head = self.solution.swapPairs(input_node)
+        self.assertEqual(input_node, head)
+
+    def test_swapPairs_iteration(self):
+        head = self.solution.swapPairs(self.list_alpha.head.next)
+        self.assertIsNotNone(head)
+        self.assertEqual(2, head.value)
+        self.assertEqual(1, head.next.value)
+        self.assertEqual(4, head.next.next.value)
+        self.assertIsNone(head.next.next.next)
+
+    def test_swapPairs_none_param_iteration(self):
+        head = self.solution.swapPairs(None)
+        self.assertIsNone(head)
+
+    def test_swapPairs_one_node_iteration(self):
+        input_node = SingleLinkedNode()
+        input_node.value = 1
+        head = self.solution.swapPairs(input_node)
+        self.assertEqual(input_node, head)
