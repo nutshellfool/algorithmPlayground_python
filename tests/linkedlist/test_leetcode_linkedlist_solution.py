@@ -216,3 +216,37 @@ class TestLeetCodeSolution(TestCase):
         input_node = SingleLinkedNode()
         node = self.solution.reverseList_iteration(input_node)
         self.assertEqual(input_node, node)
+
+    def test_removeNthFromEnd(self):
+        head = self.solution.removeNthFromEnd(self.list_alpha.head.next, 2)
+        self.assertIsNotNone(head)
+        self.assertEqual(1, head.value)
+        self.assertEqual(4, head.next.value)
+        self.assertIsNone(head.next.next)
+
+    def test_removeNthFromEnd_1element_k_equals_1(self):
+        input_node = SingleLinkedNode()
+        input_node.value = 1
+        head = self.solution.removeNthFromEnd(input_node, 1)
+        self.assertIsNone(head)
+
+    def test_removeNthFromEnd_2elements_k_equals_2(self):
+        list_local = SingleLinkedList()
+        list_local.append_node_to_tail(1)
+        list_local.append_node_to_tail(2)
+        head = self.solution.removeNthFromEnd(list_local.head.next, 2)
+        self.assertIsNotNone(head)
+        self.assertEqual(2, head.value)
+
+    def test_removeNthFromEnd_none_head(self):
+        head = self.solution.removeNthFromEnd(None, 2)
+        self.assertIsNone(head)
+
+    def test_removeNthFromEnd_negative_k(self):
+        head = self.solution.removeNthFromEnd(self.list_alpha.head.next, -1)
+        self.assertIsNone(head)
+
+    def test_removeNthFromEnd_k_beyond_list_length(self):
+        head = self.solution.removeNthFromEnd(self.list_alpha.head.next, 4)
+        self.assertIsNotNone(head)
+        self.assertEqual(self.list_alpha.head.next, head)

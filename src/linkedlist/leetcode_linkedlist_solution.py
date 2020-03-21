@@ -162,3 +162,33 @@ class Solution(object):
             pre = cur
             cur = temp
         return pre
+
+    def removeNthFromEnd(self, head, n):
+        """
+        :type head: ListNode
+        :type n: int
+        :rtype: ListNode
+        """
+        if not head or n < 0:
+            return None
+
+        fast = head
+        for x in xrange(1, n):
+            fast = fast.next
+
+        if not fast:
+            return head
+
+        slow = head
+        prev = None
+        while fast.next:
+            prev = slow
+            fast = fast.next
+            slow = slow.next
+
+        if not prev:
+            head = head.next
+        else:
+            prev.next = prev.next.next
+
+        return head
