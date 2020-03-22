@@ -40,3 +40,34 @@ class Solution(object):
                 map_t[v] = 0
 
         return map_t == map_s
+
+    def twoSum(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+        if not nums:
+            return None
+        map_v_index = {}
+        for i in xrange(len(nums)):
+            if map_v_index.get(target - nums[i]) is not None:
+                return [map_v_index.get(target - nums[i]), i]
+            else:
+                map_v_index[nums[i]] = i
+        return None
+
+    def twoSum_instinct(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+        if not nums:
+            return None
+
+        for i in xrange(len(nums)):
+            for j in xrange(i, len(nums)):
+                if nums[i] + nums[j] == target:
+                    return [i, j]
+        return None

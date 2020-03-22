@@ -57,7 +57,7 @@ to see more usage please refer [coverage docs](https://coverage.readthedocs.io/e
 ### HashMap & Set
 
 - [x] [Valid Anagram](https://leetcode.com/problems/valid-anagram/)
-- [ ] [Two Sum](https://leetcode.com/problems/two-sum/)
+- [x] [Two Sum](https://leetcode.com/problems/two-sum/)
 - [ ] [3Sum](https://leetcode.com/problems/3sum/)
 - [ ] [4Sum](https://leetcode.com/problems/4sum/)
 
