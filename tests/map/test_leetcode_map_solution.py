@@ -47,3 +47,45 @@ class TestLeetCodeMapSolution(TestCase):
     def test_twoSum_none_instinct(self):
         result_list = self.solution.twoSum_instinct(None, 2)
         self.assertIsNone(result_list)
+
+    def test_threeSum(self):
+        input_list = [-1, 0, 1, 2, -1, -4]
+        expected_lists = [
+            [-1, 0, 1],
+            [-1, -1, 2]
+        ]
+        result_lists = self.solution.threeSum(input_list)
+        self.assertIsNotNone(result_lists)
+        self.assertEqual(sorted(expected_lists), result_lists)
+
+    def test_threeSum_none(self):
+        result_list = self.solution.threeSum(None)
+        self.assertIsNone(result_list)
+
+    def test_threeSum_map(self):
+        input_list = [-1, 0, 1, 2, -1, -4]
+        expected_lists = [
+            [-1, 0, 1],
+            [-1, -1, 2]
+        ]
+        result_lists = self.solution.threeSum_map(input_list)
+        self.assertIsNotNone(result_lists)
+        self.assertEqual(sorted(expected_lists), result_lists)
+
+    def test_threeSum_map_none(self):
+        result_list = self.solution.threeSum_map(None)
+        self.assertIsNone(result_list)
+
+    def test_threeSum_instinct(self):
+        input_list = [-1, 0, 1, 2, -1, -4]
+        expected_lists = [
+            [-1, 0, 1],
+            [-1, -1, 2]
+        ]
+        result_lists = self.solution.threeSum_instinct(input_list)
+        self.assertIsNotNone(result_lists)
+        self.assertEqual(sorted(expected_lists), result_lists)
+
+    def test_threeSum_instinct_none(self):
+        result_list = self.solution.threeSum_instinct(None)
+        self.assertIsNone(result_list)
