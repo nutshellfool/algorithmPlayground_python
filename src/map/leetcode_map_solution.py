@@ -184,3 +184,24 @@ class Solution(object):
                         right -= 1
 
         return result_list
+
+    def twoSum2(self, numbers, target):
+        """
+        :type numbers: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+        if not numbers:
+            return None
+
+        left, right = 0, len(numbers) - 1
+        while left < right:
+            sum_2 = numbers[left] + numbers[right]
+            if sum_2 - target > 0:
+                right -= 1
+            elif sum_2 - target < 0:
+                left += 1
+            else:
+                return [left + 1, right + 1]
+
+        return None

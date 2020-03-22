@@ -61,7 +61,7 @@ to see more usage please refer [coverage docs](https://coverage.readthedocs.io/e
 - [x] [3Sum](https://leetcode.com/problems/3sum/)
 - [x] [4Sum](https://leetcode.com/problems/4sum/)
 
-- [ ] [Two Sum II - Input array is sorted](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/)
+- [x] [Two Sum II - Input array is sorted](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/)
 - [ ] [Majority Element](https://leetcode.com/problems/majority-element/)
 
 ### Tree - Binary Search Tree

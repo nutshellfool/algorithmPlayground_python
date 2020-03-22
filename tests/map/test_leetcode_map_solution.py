@@ -140,3 +140,31 @@ class TestLeetCodeMapSolution(TestCase):
     def test_fourSum_none(self):
         result_list = self.solution.fourSum(None, 0)
         self.assertIsNone(result_list)
+
+    def test_twoSum2(self):
+        input_list = [2, 7, 11, 15]
+        expected_list = [1, 2]
+        result_list = self.solution.twoSum2(input_list, 9)
+        self.assertIsNotNone(result_list)
+        self.assertEqual(sorted(expected_list), result_list)
+
+    # this problem may have follow up case:
+    #   the result may not unique
+    #
+    # def test_twoSum2_1(self):
+    #     input_list = [2,7,7,15]
+    #     expected_list = [[1, 2], [1, 3]]
+    #     result_list = self.solution.twoSum2(input_list, 9)
+    #     self.assertIsNotNone(result_list)
+    #     self.assertEqual(sorted(expected_list), sorted(result_list))
+    #
+    # def test_twoSum2_2(self):
+    #     input_list = [0, 0, 0]
+    #     expected_list = [[1, 2], [1, 3]]
+    #     result_list = self.solution.twoSum2(input_list, 0)
+    #     self.assertIsNotNone(result_list)
+    #     self.assertEqual(sorted(expected_list), sorted(result_list))
+
+    def test_twoSum2_none(self):
+        result_list = self.solution.twoSum2(None, 0)
+        self.assertIsNone(result_list)
