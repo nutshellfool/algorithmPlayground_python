@@ -147,3 +147,40 @@ class Solution(object):
                         result_list_set.add((nums[i], nums[j], nums[k]))
 
         return list(map(list, result_list_set))
+
+    def fourSum(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[List[int]]
+        """
+        if not nums:
+            return None
+
+        nums = sorted(nums)
+        result_list = []
+        length = len(nums)
+        for i in xrange(length):
+            if i > 0 and nums[i] == nums[i - 1]:
+                continue
+            for j in xrange(i + 1, length):
+                if j > i + 1 and nums[j] == nums[j - 1]:
+                    continue
+                left, right = j + 1, length - 1
+                sum_i_j = nums[i] + nums[j]
+                while left < right:
+                    sum_four = sum_i_j + nums[left] + nums[right]
+                    if sum_four < target:
+                        left += 1
+                    elif sum_four > target:
+                        right -= 1
+                    else:
+                        result_list.append([nums[i], nums[j], nums[left], nums[right]])
+                        while left < right and nums[left] == nums[left + 1]:
+                            left += 1
+                        while left < right and nums[right] == nums[right - 1]:
+                            right -= 1
+                        left += 1
+                        right -= 1
+
+        return result_list

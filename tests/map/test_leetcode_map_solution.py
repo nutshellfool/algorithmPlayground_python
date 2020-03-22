@@ -89,3 +89,27 @@ class TestLeetCodeMapSolution(TestCase):
     def test_threeSum_instinct_none(self):
         result_list = self.solution.threeSum_instinct(None)
         self.assertIsNone(result_list)
+
+    def test_fourSum(self):
+        input_list = [1, 0, -1, 0, -2, 2]
+        expected_list = [
+            [-1, 0, 0, 1],
+            [-2, -1, 1, 2],
+            [-2, 0, 0, 2]
+        ]
+        result_list = self.solution.fourSum(input_list, 0)
+        self.assertIsNotNone(result_list)
+        self.assertEqual(sorted(expected_list), result_list)
+
+    def test_fourSum1(self):
+        input_list = [0, 0, 0, 0]
+        expected_list = [
+            [0, 0, 0, 0]
+        ]
+        result_list = self.solution.fourSum(input_list, 0)
+        self.assertIsNotNone(result_list)
+        self.assertEqual(sorted(expected_list), result_list)
+
+    def test_fourSum_none(self):
+        result_list = self.solution.fourSum(None, 0)
+        self.assertIsNone(result_list)

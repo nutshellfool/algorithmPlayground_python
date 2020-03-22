@@ -59,7 +59,7 @@ to see more usage please refer [coverage docs](https://coverage.readthedocs.io/e
 - [x] [Valid Anagram](https://leetcode.com/problems/valid-anagram/)
 - [x] [Two Sum](https://leetcode.com/problems/two-sum/)
 - [x] [3Sum](https://leetcode.com/problems/3sum/)
-- [ ] [4Sum](https://leetcode.com/problems/4sum/)
+- [x] [4Sum](https://leetcode.com/problems/4sum/)
 
 - [ ] [Two Sum II - Input array is sorted](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/)
 - [ ] [Majority Element](https://leetcode.com/problems/majority-element/)
