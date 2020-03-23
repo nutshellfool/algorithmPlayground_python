@@ -110,3 +110,36 @@ class Solution(object):
                 stack.append(node.left)
 
         return result_list
+
+    def postorderTraversal(self, root):
+        """
+        :type root: TreeNode
+        :rtype: List[int]
+        """
+        result_list = []
+        self._traversal_tree_post_order(root, result_list)
+        return result_list
+
+    def _traversal_tree_post_order(self, root, result):
+        if not root:
+            return
+        self._traversal_tree_post_order(root.left, result)
+        self._traversal_tree_post_order(root.right, result)
+        result.append(root.val)
+
+    def postorderTraversal_iteration(self, root):
+        """
+        :type root: TreeNode
+        :rtype: List[int]
+        """
+        result_list = []
+        stack = deque()
+        stack.append(root)
+        while stack:
+            node = stack.pop()
+            if node:
+                result_list.append(node.val)
+                stack.append(node.left)
+                stack.append(node.right)
+
+        return result_list[::-1]
