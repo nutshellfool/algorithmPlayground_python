@@ -205,3 +205,31 @@ class Solution(object):
                 return [left + 1, right + 1]
 
         return None
+
+    def majorityElement(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        if not nums:
+            return None
+        map_value_times = dict()
+        for v in nums:
+            map_value_times[v] = map_value_times.get(v, 0) + 1
+
+        maj = len(nums) / 2
+        for value, repeats in map_value_times.items():
+            if repeats > maj:
+                return value
+        return None
+
+    def majorityElement_instinct(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        if not nums:
+            return None
+
+        nums = sorted(nums)
+        return nums[len(nums) / 2]

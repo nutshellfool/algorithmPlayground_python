@@ -168,3 +168,35 @@ class TestLeetCodeMapSolution(TestCase):
     def test_twoSum2_none(self):
         result_list = self.solution.twoSum2(None, 0)
         self.assertIsNone(result_list)
+
+    def test_majorityElement(self):
+        input_list = [3, 2, 3]
+        majority = self.solution.majorityElement(input_list)
+        self.assertIsNotNone(majority)
+        self.assertEqual(3, majority)
+
+    def test_majorityElement1(self):
+        input_list = [2, 2, 1, 1, 1, 2, 2]
+        majority = self.solution.majorityElement(input_list)
+        self.assertIsNotNone(majority)
+        self.assertEqual(2, majority)
+
+    def test_majorityElement_none(self):
+        majority = self.solution.majorityElement(None)
+        self.assertIsNone(majority)
+
+    def test_majorityElement_instinct(self):
+        input_list = [3, 2, 3]
+        majority = self.solution.majorityElement_instinct(input_list)
+        self.assertIsNotNone(majority)
+        self.assertEqual(3, majority)
+
+    def test_majorityElement_instinct1(self):
+        input_list = [2, 2, 1, 1, 1, 2, 2]
+        majority = self.solution.majorityElement_instinct(input_list)
+        self.assertIsNotNone(majority)
+        self.assertEqual(2, majority)
+
+    def test_majorityElement_instinct_none(self):
+        majority = self.solution.majorityElement_instinct(None)
+        self.assertIsNone(majority)
