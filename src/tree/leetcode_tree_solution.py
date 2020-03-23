@@ -77,3 +77,36 @@ class Solution(object):
             result_list.append(current.val)
             current = current.right
         return result_list
+
+    def preorderTraversal(self, root):
+        """
+        :type root: TreeNode
+        :rtype: List[int]
+        """
+        result_list = []
+        self._traversal_tree_pre_order(root, result_list)
+        return result_list
+
+    def _traversal_tree_pre_order(self, root, result):
+        if not root:
+            return
+        result.append(root.val)
+        self._traversal_tree_pre_order(root.left, result)
+        self._traversal_tree_pre_order(root.right, result)
+
+    def preorderTraversal_iteration(self, root):
+        """
+        :type root: TreeNode
+        :rtype: List[int]
+        """
+        result_list = []
+        stack = deque()
+        stack.append(root)
+        while stack:
+            node = stack.pop()
+            if node:
+                result_list.append(node.val)
+                stack.append(node.right)
+                stack.append(node.left)
+
+        return result_list

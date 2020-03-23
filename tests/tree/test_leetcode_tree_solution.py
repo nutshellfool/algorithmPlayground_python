@@ -88,3 +88,15 @@ class TestLeetCodeTreeSolution(TestCase):
         expected_list = [1, 2, 3]
         self.assertIsNotNone(traversal_list)
         self.assertEqual(expected_list, traversal_list)
+
+    def test_preorderTraversal(self):
+        traversal_list = self.solution.preorderTraversal(self.tree_alpha_root_node)
+        expected_list = [2, 1, 3]
+        self.assertIsNotNone(traversal_list)
+        self.assertEqual(expected_list, traversal_list)
+
+    def test_preorderTraversal_iteration(self):
+        traversal_list = self.solution.preorderTraversal_iteration(self.tree_alpha_root_node)
+        expected_list = [2, 1, 3]
+        self.assertIsNotNone(traversal_list)
+        self.assertEqual(expected_list, traversal_list)
