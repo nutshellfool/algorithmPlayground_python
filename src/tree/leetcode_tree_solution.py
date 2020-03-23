@@ -164,3 +164,16 @@ class Solution(object):
         #     else:
         #         return root
         return root if left and right else left or right
+
+    def lowestCommonAncestorBST(self, root, p, q):
+        """
+        :type root: TreeNode
+        :type p: TreeNode
+        :type q: TreeNode
+        :rtype: TreeNode
+        """
+        if root.val > p.val and root.val > q.val:
+            return self.lowestCommonAncestorBST(root.left, p, q)
+        elif root.val < p.val and root.val < q.val:
+            return self.lowestCommonAncestorBST(root.right, p, q)
+        return root

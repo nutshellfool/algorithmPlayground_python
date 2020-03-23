@@ -127,3 +127,18 @@ class TestLeetCodeTreeSolution(TestCase):
         lca = self.solution.lowestCommonAncestor(node_root, node_root.left, node_root.right)
         self.assertIsNotNone(lca)
         self.assertEqual(node_root, lca)
+
+    def test_lowestCommonAncestorBST(self):
+        node_root = TreeNode(6)
+        node_root.left = TreeNode(2)
+        node_root.left.left = TreeNode(0)
+        node_root.left.right = TreeNode(4)
+        node_root.left.right.left = TreeNode(3)
+        node_root.left.right.right = TreeNode(5)
+        node_root.right = TreeNode(8)
+        node_root.right.left = TreeNode(7)
+        node_root.right.right = TreeNode(9)
+
+        lca = self.solution.lowestCommonAncestorBST(node_root, node_root.left, node_root.right)
+        self.assertIsNotNone(lca)
+        self.assertEqual(node_root, lca)
