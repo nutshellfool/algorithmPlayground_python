@@ -1,0 +1,78 @@
+from sys import maxint
+from unittest import TestCase
+
+from src.tree.leetcode_tree_solution import Solution, TreeNode
+
+
+class TestLeetCodeTreeSolution(TestCase):
+    def setUp(self):
+        self.solution = Solution()
+
+        self.tree_alpha_root_node = TreeNode(2)
+        self.tree_alpha_root_node.left = TreeNode(1)
+        self.tree_alpha_root_node.right = TreeNode(3)
+
+        self.tree_beta_root_node = TreeNode(5)
+        self.tree_beta_root_node.left = TreeNode(1)
+        self.tree_beta_root_node.right = TreeNode(4)
+        self.tree_beta_root_node.right.left = TreeNode(3)
+        self.tree_beta_root_node.right.right = TreeNode(6)
+
+        self.tree_maxint_alpha_root_node = TreeNode(maxint - 1)
+        self.tree_maxint_alpha_root_node.left = TreeNode(maxint - 2)
+        self.tree_maxint_alpha_root_node.right = TreeNode(maxint)
+
+        minint = - maxint - 1
+        self.tree_minint_alpha_root_node = TreeNode(minint + 1)
+        self.tree_minint_alpha_root_node.left = TreeNode(minint)
+        self.tree_minint_alpha_root_node.right = TreeNode(minint + 2)
+
+    def test_isValidBST(self):
+        is_valid = self.solution.isValidBST(self.tree_alpha_root_node)
+        self.assertIsNotNone(is_valid)
+        self.assertTrue(is_valid)
+
+    def test_isValidBST1(self):
+        is_valid = self.solution.isValidBST(self.tree_beta_root_node)
+        self.assertIsNotNone(is_valid)
+        self.assertFalse(is_valid)
+
+    def test_isValidBST_maxint(self):
+        is_valid = self.solution.isValidBST(self.tree_maxint_alpha_root_node)
+        self.assertIsNotNone(is_valid)
+        self.assertTrue(is_valid)
+
+    def test_isValidBST_minint(self):
+        is_valid = self.solution.isValidBST(self.tree_minint_alpha_root_node)
+        self.assertIsNotNone(is_valid)
+        self.assertTrue(is_valid)
+
+    # noinspection PyTypeChecker
+    def test_isValidBST_none(self):
+        is_valid = self.solution.isValidBST(None)
+        self.assertTrue(is_valid)
+
+    def test_isValidBST_instinct(self):
+        is_valid = self.solution.isValidBST_instinct(self.tree_alpha_root_node)
+        self.assertIsNotNone(is_valid)
+        self.assertTrue(is_valid)
+
+    def test_isValidBST_instinct1(self):
+        is_valid = self.solution.isValidBST_instinct(self.tree_beta_root_node)
+        self.assertIsNotNone(is_valid)
+        self.assertFalse(is_valid)
+
+    def test_isValidBST_instinct_maxint(self):
+        is_valid = self.solution.isValidBST_instinct(self.tree_maxint_alpha_root_node)
+        self.assertIsNotNone(is_valid)
+        self.assertTrue(is_valid)
+
+    def test_isValidBST_instinct_minint(self):
+        is_valid = self.solution.isValidBST_instinct(self.tree_minint_alpha_root_node)
+        self.assertIsNotNone(is_valid)
+        self.assertTrue(is_valid)
+
+    # noinspection PyTypeChecker
+    def test_isValidBST_instinct_none(self):
+        is_valid = self.solution.isValidBST_instinct(None)
+        self.assertTrue(is_valid)
