@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from collections import deque
 from sys import maxsize
 
 
@@ -33,11 +34,11 @@ class Solution(object):
         if not root:
             return True
 
-        in_order_traversal = self._traversal_tree(root)
+        in_order_traversal = self._traversal_tree_in_order(root)
 
         return self._is_list_in_ascend_order(in_order_traversal)
 
-    def _traversal_tree(self, root):
+    def _traversal_tree_in_order(self, root):
         traversal_list = []
         self._traversal_in_order_bst_helper(root, traversal_list)
         return traversal_list
@@ -55,3 +56,24 @@ class Solution(object):
             if order_list[i] < order_list[i - 1]:
                 return False
         return True
+
+    def inorderTraversal(self, root):
+        """
+        :type root: TreeNode
+        :rtype: List[int]
+        """
+        return self._traversal_tree_in_order(root)
+
+    def inorderTraversal_iteration(self, root):
+        result_list = []
+        stack = deque()
+        current = root
+        while current or stack:
+            while current:
+                stack.append(current)
+                current = current.left
+
+            current = stack.pop()
+            result_list.append(current.val)
+            current = current.right
+        return result_list

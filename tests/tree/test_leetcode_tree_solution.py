@@ -76,3 +76,15 @@ class TestLeetCodeTreeSolution(TestCase):
     def test_isValidBST_instinct_none(self):
         is_valid = self.solution.isValidBST_instinct(None)
         self.assertTrue(is_valid)
+
+    def test_inorderTraversal(self):
+        traversal_list = self.solution.inorderTraversal(self.tree_alpha_root_node)
+        expected_list = [1, 2, 3]
+        self.assertIsNotNone(traversal_list)
+        self.assertEqual(expected_list, traversal_list)
+
+    def test_inorderTraversal_iteration(self):
+        traversal_list = self.solution.inorderTraversal_iteration(self.tree_alpha_root_node)
+        expected_list = [1, 2, 3]
+        self.assertIsNotNone(traversal_list)
+        self.assertEqual(expected_list, traversal_list)
