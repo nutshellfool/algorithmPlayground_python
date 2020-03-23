@@ -143,3 +143,24 @@ class Solution(object):
                 stack.append(node.right)
 
         return result_list[::-1]
+
+    def lowestCommonAncestor(self, root, p, q):
+        """
+        :type root: TreeNode
+        :type p: TreeNode
+        :type q: TreeNode
+        :rtype: TreeNode
+        """
+        if not root or root == p or root == q:
+            return root
+        left = self.lowestCommonAncestor(root.left, p, q)
+        right = self.lowestCommonAncestor(root.right, p, q)
+
+        # if not left:
+        #     return right
+        # else:
+        #     if not right:
+        #         return left
+        #     else:
+        #         return root
+        return root if left and right else left or right

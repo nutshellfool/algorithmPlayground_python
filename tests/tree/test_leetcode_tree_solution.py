@@ -112,3 +112,18 @@ class TestLeetCodeTreeSolution(TestCase):
         expected_list = [1, 3, 2]
         self.assertIsNotNone(traversal_list)
         self.assertEqual(expected_list, traversal_list)
+
+    def test_lowestCommonAncestor(self):
+        node_root = TreeNode(3)
+        node_root.left = TreeNode(5)
+        node_root.left.left = TreeNode(6)
+        node_root.left.right = TreeNode(2)
+        node_root.left.right.left = TreeNode(7)
+        node_root.left.right.right = TreeNode(4)
+        node_root.right = TreeNode(1)
+        node_root.right.left = TreeNode(0)
+        node_root.right.right = TreeNode(8)
+
+        lca = self.solution.lowestCommonAncestor(node_root, node_root.left, node_root.right)
+        self.assertIsNotNone(lca)
+        self.assertEqual(node_root, lca)
