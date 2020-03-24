@@ -49,3 +49,19 @@ class TestLeetCodeBitwiseSolution(TestCase):
     def test_isPowerof2_0(self):
         is_power_of2 = self.solution.isPowerOfTwo(0)
         self.assertFalse(is_power_of2)
+
+    def test_countBits(self):
+        array_of_bits = self.solution.countBits(2)
+        self.assertIsNotNone(array_of_bits)
+        self.assertEqual(3, len(array_of_bits))
+        self.assertEqual(0, array_of_bits[0])
+        self.assertEqual(1, array_of_bits[1])
+        self.assertEqual(1, array_of_bits[2])
+
+    def test_countBits_instinct(self):
+        array_of_bits = self.solution.countBits_instinct(2)
+        self.assertIsNotNone(array_of_bits)
+        self.assertEqual(3, len(array_of_bits))
+        self.assertEqual(0, array_of_bits[0])
+        self.assertEqual(1, array_of_bits[1])
+        self.assertEqual(1, array_of_bits[2])

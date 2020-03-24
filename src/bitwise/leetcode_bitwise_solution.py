@@ -36,3 +36,24 @@ class Solution(object):
         :rtype: bool
         """
         return n > 0 and not (n & n - 1)
+
+    def countBits(self, num):
+        """
+        :type num: int
+        :rtype: List[int]
+        """
+        result = [0] * (num + 1)
+        for i in xrange(num + 1):
+            result[i] = result[i >> 1] + (i & 1)
+        return result
+
+    def countBits_instinct(self, num):
+        """
+        :type num: int
+        :rtype: List[int]
+        """
+        result = [0] * (num + 1)
+        for i in xrange(num + 1):
+            result[i] = self.hammingWeight(i)
+
+        return result

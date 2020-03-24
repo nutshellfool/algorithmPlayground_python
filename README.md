@@ -171,8 +171,8 @@ to see more usage please refer [coverage docs](https://coverage.readthedocs.io/e
 ### Bitwise
 
 - [x] [Number of 1 Bits](https://leetcode.com/problems/number-of-1-bits/)
-- [ ] [Power of Two](https://leetcode.com/problems/power-of-two/)
-- [ ] [Counting Bits](https://leetcode.com/problems/counting-bits/)
+- [x] [Power of Two](https://leetcode.com/problems/power-of-two/)
+- [x] [Counting Bits](https://leetcode.com/problems/counting-bits/)
 - [ ] [UTF-8 Validation](https://leetcode.com/problems/utf-8-validation/)
 
 ## System design Problem / Solution sets
