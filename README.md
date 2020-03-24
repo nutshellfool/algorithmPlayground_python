@@ -112,6 +112,12 @@ to see more usage please refer [coverage docs](https://coverage.readthedocs.io/e
 
 - [ ] [Pow(x, n)](https://leetcode.com/problems/powx-n/)
 - [ ] [Generate Parentheses](https://leetcode.com/problems/generate-parentheses/)
+- [x] [Validate Binary Search Tree](https://leetcode.com/problems/validate-binary-search-tree/)
+- [x] [Lowest Common Ancestor of a Binary Search Tree](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/)
+- [x] [Lowest Common Ancestor of a Binary Tree](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/)
+- [x] [Binary Tree Inorder Traversal](https://leetcode.com/problems/binary-tree-inorder-traversal/)
+- [x] [Binary Tree Preorder Traversal](https://leetcode.com/problems/binary-tree-preorder-traversal/)
+- [x] [Binary Tree Postorder Traversal](https://leetcode.com/problems/binary-tree-postorder-traversal/)
 
 ### Divide & Conquer
 
@@ -164,7 +170,7 @@ to see more usage please refer [coverage docs](https://coverage.readthedocs.io/e
 
 ### Bitwise
 
-- [ ] [Number of 1 Bits](https://leetcode.com/problems/number-of-1-bits/)
+- [x] [Number of 1 Bits](https://leetcode.com/problems/number-of-1-bits/)
 - [ ] [Power of Two](https://leetcode.com/problems/power-of-two/)
 - [ ] [Counting Bits](https://leetcode.com/problems/counting-bits/)
 - [ ] [UTF-8 Validation](https://leetcode.com/problems/utf-8-validation/)
