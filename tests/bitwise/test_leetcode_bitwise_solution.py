@@ -37,3 +37,15 @@ class TestLeetCodeBitwiseSolution(TestCase):
         hamming_weight = self.solution.hammingWeight_instinct(0)
         self.assertEqual(0, hamming_weight)
         self.assertIsNotNone(hamming_weight)
+
+    def test_isPowerof2(self):
+        is_power_of2 = self.solution.isPowerOfTwo(4)
+        self.assertTrue(is_power_of2)
+
+    def test_isPowerof2_3(self):
+        is_power_of2 = self.solution.isPowerOfTwo(3)
+        self.assertFalse(is_power_of2)
+
+    def test_isPowerof2_0(self):
+        is_power_of2 = self.solution.isPowerOfTwo(0)
+        self.assertFalse(is_power_of2)
