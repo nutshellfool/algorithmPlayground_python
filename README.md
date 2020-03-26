@@ -75,7 +75,7 @@ to see more usage please refer [coverage docs](https://coverage.readthedocs.io/e
 
 ### Priority Queue(heap)
 
-- [ ] [Sliding Window Maximum](https://leetcode.com/problems/sliding-window-maximum/)
+- [x] [Sliding Window Maximum](https://leetcode.com/problems/sliding-window-maximum/)
 - [ ] [Kth Largest Element in a Stream](https://leetcode.com/problems/kth-largest-element-in-a-stream/)
 - [ ] [Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array/)
 - [ ] [Find Median from Data Stream](https://leetcode.com/problems/find-median-from-data-stream/)
