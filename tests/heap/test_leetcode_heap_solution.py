@@ -62,3 +62,43 @@ class TestLeetCodeHeapSolution(TestCase):
     def test_maxSlidingWindow_instinct_k_less_than0(self):
         result = self.solution.maxSlidingWindow_instinct([1, 2, 3], -1)
         self.assertIsNone(result)
+
+    def test_findKthLargest(self):
+        input_list = [3, 2, 1, 5, 6, 4]
+        kth_largest_element = self.solution.findKthLargest(input_list, 2)
+        self.assertIsNotNone(kth_largest_element)
+        self.assertEqual(5, kth_largest_element)
+
+    def test_findKthLargest_none(self):
+        kth_largest_element = self.solution.findKthLargest(None, 2)
+        self.assertIsNone(kth_largest_element)
+
+    def test_findKthLargest_k_zero(self):
+        input_list = [3, 2, 1, 5, 6, 4]
+        kth_largest_element = self.solution.findKthLargest(input_list, 0)
+        self.assertIsNone(kth_largest_element)
+
+    def test_findKthLargest_k_larger_than_length(self):
+        input_list = [3, 2, 1, 5, 6, 4]
+        kth_largest_element = self.solution.findKthLargest(input_list, 7)
+        self.assertIsNone(kth_largest_element)
+
+    def test_findKthLargest_instinct(self):
+        input_list = [3, 2, 1, 5, 6, 4]
+        kth_largest_element = self.solution.findKthLargest_instinct(input_list, 2)
+        self.assertIsNotNone(kth_largest_element)
+        self.assertEqual(5, kth_largest_element)
+
+    def test_findKthLargest_instinct_none(self):
+        kth_largest_element = self.solution.findKthLargest_instinct(None, 2)
+        self.assertIsNone(kth_largest_element)
+
+    def test_findKthLargest_instinct_k_zero(self):
+        input_list = [3, 2, 1, 5, 6, 4]
+        kth_largest_element = self.solution.findKthLargest_instinct(input_list, 0)
+        self.assertIsNone(kth_largest_element)
+
+    def test_findKthLargest_instinct_k_larger_than_length(self):
+        input_list = [3, 2, 1, 5, 6, 4]
+        kth_largest_element = self.solution.findKthLargest_instinct(input_list, 7)
+        self.assertIsNone(kth_largest_element)

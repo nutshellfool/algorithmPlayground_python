@@ -52,6 +52,10 @@ to see more usage please refer [coverage docs](https://coverage.readthedocs.io/e
 - [ ] [Implement Stack using Queues](https://leetcode.com/problems/implement-stack-using-queues/)
 - [ ] [Implement Queue using Stacks](https://leetcode.com/problems/implement-queue-using-stacks/)
 
+### Deque
+
+- [x] [Sliding Window Maximum](https://leetcode.com/problems/sliding-window-maximum/)
+
 ### Skip-list
 
 ### HashMap & Set
@@ -77,7 +81,7 @@ to see more usage please refer [coverage docs](https://coverage.readthedocs.io/e
 
 - [x] [Sliding Window Maximum](https://leetcode.com/problems/sliding-window-maximum/)
 - [ ] [Kth Largest Element in a Stream](https://leetcode.com/problems/kth-largest-element-in-a-stream/)
-- [ ] [Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array/)
+- [x] [Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array/)
 - [ ] [Find Median from Data Stream](https://leetcode.com/problems/find-median-from-data-stream/)
 - [ ] [Sliding Window Median](https://leetcode.com/problems/sliding-window-median/)
 
