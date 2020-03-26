@@ -1,7 +1,10 @@
 # -*- coding: utf-8 -*-
 from collections import deque
 
-from queue import PriorityQueue
+try:
+    from Queue import PriorityQueue  # Version < 3.0
+except ImportError:
+    from queue import PriorityQueue
 
 
 class Solution(object):
