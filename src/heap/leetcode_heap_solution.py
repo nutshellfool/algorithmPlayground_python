@@ -200,3 +200,38 @@ class KthLargest(object):
                 self.q.put(val)
 
         return self.q.peek()
+
+
+class MedianFinder(object):
+
+    def __init__(self):
+        """
+        initialize your data structure here.
+        """
+        self.min_heap = PriorityQueueX()
+        self.max_heap = PriorityQueueX()
+        self.queue_size = 0
+
+    def addNum(self, num):
+        """
+        :type num: int
+        :rtype: None
+        """
+        if self.max_heap.qsize() == 0 or num < -self.max_heap.peek():
+            self.max_heap.put(-num)
+        else:
+            self.min_heap.put(num)
+        self._balancefy(self.max_heap, self.min_heap)
+        self.queue_size += 1
+
+    def findMedian(self):
+        """
+        :rtype: float
+        """
+        return -self.max_heap.peek() if self.queue_size & 1 else (-self.max_heap.peek() + self.min_heap.peek()) / 2.0
+
+    def _balancefy(self, _max_heap, _min_heap):
+        while _min_heap.qsize() > _max_heap.qsize():
+            _max_heap.put(-_min_heap.get())
+        while _max_heap.qsize() - 1 > _min_heap.qsize():
+            _min_heap.put(-_max_heap.get())

@@ -82,7 +82,7 @@ to see more usage please refer [coverage docs](https://coverage.readthedocs.io/e
 - [x] [Sliding Window Maximum](https://leetcode.com/problems/sliding-window-maximum/)
 - [x] [Kth Largest Element in a Stream](https://leetcode.com/problems/kth-largest-element-in-a-stream/)
 - [x] [Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array/)
-- [ ] [Find Median from Data Stream](https://leetcode.com/problems/find-median-from-data-stream/)
+- [x] [Find Median from Data Stream](https://leetcode.com/problems/find-median-from-data-stream/)
 - [x] [Sliding Window Median](https://leetcode.com/problems/sliding-window-median/)
 
 **possible**
@@ -94,6 +94,7 @@ to see more usage please refer [coverage docs](https://coverage.readthedocs.io/e
 - [ ] [Pow(x, n)](https://leetcode.com/problems/powx-n/)
 - [ ] [Sqrt(x)](https://leetcode.com/problems/sqrtx/)
 - [ ] [Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/)
+- [ ] [Gas Station](https://lintcode.com/problem/gas-station)
 
 ### Breath First Search
 
@@ -133,6 +134,7 @@ to see more usage please refer [coverage docs](https://coverage.readthedocs.io/e
 ### Greedy
 
 - [ ] [Candy](https://leetcode.com/problems/candy/)
+- [ ] [Divide Chocolate](https://leetcode-cn.com/problems/divide-chocolate/)
 
 ### Backtracking
 
@@ -178,6 +180,11 @@ to see more usage please refer [coverage docs](https://coverage.readthedocs.io/e
 - [x] [Power of Two](https://leetcode.com/problems/power-of-two/)
 - [x] [Counting Bits](https://leetcode.com/problems/counting-bits/)
 - [ ] [UTF-8 Validation](https://leetcode.com/problems/utf-8-validation/)
+
+### two variable
+
+- [ ] [Maximum Subarray](https://lintcode.com/problem/maximum-subarray/)
+- [ ] [Russian Doll Envelopes](https://lintcode.com/problem/russian-doll-envelopes/description)
 
 ## System design Problem / Solution sets
 

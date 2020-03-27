@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from src.heap.leetcode_heap_solution import Solution, KthLargest
+from src.heap.leetcode_heap_solution import Solution, KthLargest, MedianFinder
 
 
 class TestLeetCodeHeapSolution(TestCase):
@@ -157,3 +157,15 @@ class TestLeetCodeHeapSolution(TestCase):
         median_sliding_window_array = self.solution.medianSlidingWindow_instinct(input_array, 1)
         self.assertIsNotNone(median_sliding_window_array)
         self.assertEqual(input_array, median_sliding_window_array)
+
+    def test_medianFinder(self):
+        finder = MedianFinder()
+        finder.addNum(1)
+        finder.addNum(2)
+        _median = finder.findMedian()
+        self.assertIsNotNone(_median)
+        self.assertEqual(1.5, _median)
+        finder.addNum(3)
+        _median = finder.findMedian()
+        self.assertIsNotNone(_median)
+        self.assertEqual(2, _median)
