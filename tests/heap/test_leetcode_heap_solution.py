@@ -116,3 +116,44 @@ class TestLeetCodeHeapSolution(TestCase):
         self.assertEqual(8, pop_value)
         pop_value = kth_largest_in_stream.add(4)
         self.assertEqual(8, pop_value)
+
+    def test_medianSlidingWindow(self):
+        input_array = [1, 3, -1, -3, 5, 3, 6, 7]
+        expect_array = [1, -1, -1, 3, 5, 6]
+        median_sliding_window_array = self.solution.medianSlidingWindow(input_array, 3)
+        self.assertIsNotNone(median_sliding_window_array)
+        self.assertEqual(expect_array, median_sliding_window_array)
+
+    def test_medianSlidingWindow_none(self):
+        median_sliding_window_array = self.solution.medianSlidingWindow(None, 3)
+        self.assertIsNone(median_sliding_window_array)
+
+    def test_medianSlidingWindow_k_equals_1(self):
+        input_array = [1, 3, -1, -3, 5, 3, 6, 7]
+        median_sliding_window_array = self.solution.medianSlidingWindow(input_array, 1)
+        self.assertIsNotNone(median_sliding_window_array)
+        self.assertEqual(input_array, median_sliding_window_array)
+
+    def test_medianSlidingWindow_instinct(self):
+        input_array = [1, 3, -1, -3, 5, 3, 6, 7]
+        expect_array = [1, -1, -1, 3, 5, 6]
+        median_sliding_window_array = self.solution.medianSlidingWindow_instinct(input_array, 3)
+        self.assertIsNotNone(median_sliding_window_array)
+        self.assertEqual(expect_array, median_sliding_window_array)
+
+    def test_medianSlidingWindow_instinct_float_median(self):
+        input_array = [1, 4, 2, 3]
+        expect_array = [2.5]
+        median_sliding_window_array = self.solution.medianSlidingWindow_instinct(input_array, 4)
+        self.assertIsNotNone(median_sliding_window_array)
+        self.assertEqual(expect_array, median_sliding_window_array)
+
+    def test_medianSlidingWindow_instinct_none(self):
+        median_sliding_window_array = self.solution.medianSlidingWindow_instinct(None, 3)
+        self.assertIsNone(median_sliding_window_array)
+
+    def test_medianSlidingWindow_instinct_k_equals_1(self):
+        input_array = [1, 3, -1, -3, 5, 3, 6, 7]
+        median_sliding_window_array = self.solution.medianSlidingWindow_instinct(input_array, 1)
+        self.assertIsNotNone(median_sliding_window_array)
+        self.assertEqual(input_array, median_sliding_window_array)
