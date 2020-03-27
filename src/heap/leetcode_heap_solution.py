@@ -7,6 +7,14 @@ except ImportError:
     from queue import PriorityQueue
 
 
+class PriorityQueueX(PriorityQueue):
+    def peek(self):
+        try:
+            return self.queue[0]
+        except IndexError:
+            return None
+
+
 class Solution(object):
     def maxSlidingWindow(self, nums, k):
         """
@@ -80,3 +88,30 @@ class Solution(object):
 
         nums = sorted(nums, reverse=True)
         return nums[k - 1]
+
+
+class KthLargest(object):
+
+    def __init__(self, k, nums):
+        """
+        :type k: int
+        :type nums: List[int]
+        """
+        self.max_size = k
+        self.q = PriorityQueueX(k)
+        for i, v in enumerate(nums):
+            self.add(v)
+
+    def add(self, val):
+        """
+        :type val: int
+        :rtype: int
+        """
+        if self.max_size > self.q.qsize():
+            self.q.put(val)
+        else:
+            if self.q.peek() < val:
+                self.q.get()
+                self.q.put(val)
+
+        return self.q.peek()

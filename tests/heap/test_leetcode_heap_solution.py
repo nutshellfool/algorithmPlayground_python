@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from src.heap.leetcode_heap_solution import Solution
+from src.heap.leetcode_heap_solution import Solution, KthLargest
 
 
 class TestLeetCodeHeapSolution(TestCase):
@@ -102,3 +102,17 @@ class TestLeetCodeHeapSolution(TestCase):
         input_list = [3, 2, 1, 5, 6, 4]
         kth_largest_element = self.solution.findKthLargest_instinct(input_list, 7)
         self.assertIsNone(kth_largest_element)
+
+    def test_KthLargestInStream(self):
+        arr = [4, 5, 8, 2]
+        kth_largest_in_stream = KthLargest(3, arr)
+        pop_value = kth_largest_in_stream.add(3)
+        self.assertEqual(4, pop_value)
+        pop_value = kth_largest_in_stream.add(5)
+        self.assertEqual(5, pop_value)
+        pop_value = kth_largest_in_stream.add(10)
+        self.assertEqual(5, pop_value)
+        pop_value = kth_largest_in_stream.add(9)
+        self.assertEqual(8, pop_value)
+        pop_value = kth_largest_in_stream.add(4)
+        self.assertEqual(8, pop_value)
