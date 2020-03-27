@@ -162,10 +162,12 @@ class TestLeetCodeHeapSolution(TestCase):
         finder = MedianFinder()
         finder.addNum(1)
         finder.addNum(2)
+
         _median = finder.findMedian()
         self.assertIsNotNone(_median)
         self.assertEqual(1.5, _median)
         finder.addNum(3)
+
         _median = finder.findMedian()
         self.assertIsNotNone(_median)
         self.assertEqual(2, _median)
