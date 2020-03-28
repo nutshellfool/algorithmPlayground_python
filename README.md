@@ -91,7 +91,7 @@ to see more usage please refer [coverage docs](https://coverage.readthedocs.io/e
 
 ### Binary Search
 
-- [ ] [Pow(x, n)](https://leetcode.com/problems/powx-n/)
+- [x] [Pow(x, n)](https://leetcode.com/problems/powx-n/)
 - [ ] [Sqrt(x)](https://leetcode.com/problems/sqrtx/)
 - [ ] [Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/)
 - [ ] [Gas Station](https://lintcode.com/problem/gas-station)
