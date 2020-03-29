@@ -93,6 +93,7 @@ to see more usage please refer [coverage docs](https://coverage.readthedocs.io/e
 
 - [x] [Pow(x, n)](https://leetcode.com/problems/powx-n/)
 - [ ] [Sqrt(x)](https://leetcode.com/problems/sqrtx/)
+- [ ] [Divide Two Integers](https://leetcode.com/problems/divide-two-integers/)
 - [ ] [Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/)
 - [ ] [Gas Station](https://lintcode.com/problem/gas-station)
 
@@ -156,7 +157,7 @@ to see more usage please refer [coverage docs](https://coverage.readthedocs.io/e
 - [ ] [Best Time to Buy and Sell Stock with Transaction Fee](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/)
 - [ ] [Longest Increasing Subsequence](https://leetcode.com/problems/longest-increasing-subsequence/)
 - [ ] [Coin Change](https://leetcode.com/problems/coin-change/)
-- [ ] [Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/)
+- [x] [Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/)
 - [ ] [Android Unlock Patterns](https://leetcode.com/problems/android-unlock-patterns/)
 
 ## Advanced data structure & algorithm
