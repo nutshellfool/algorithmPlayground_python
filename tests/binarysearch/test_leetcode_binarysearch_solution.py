@@ -67,3 +67,65 @@ class TestLeetCodeBinarySearchSolution(TestCase):
         result = self.solution.myPow_instinct(2.0, -2)
         self.assertIsNotNone(result)
         self.assertAlmostEqual(0.25000, result)
+
+    def test_mySqrt(self):
+        int_sqrt = self.solution.mySqrt(4)
+        self.assertIsNotNone(int_sqrt)
+        self.assertEqual(2, int_sqrt)
+
+    def test_mySqrt1(self):
+        int_sqrt = self.solution.mySqrt(10)
+        self.assertIsNotNone(int_sqrt)
+        self.assertEqual(3, int_sqrt)
+
+    def test_mySqrt_negative(self):
+        int_sqrt = self.solution.mySqrt(-1)
+        self.assertIsNone(int_sqrt)
+
+    def test_mySqrt_instinct(self):
+        int_sqrt = self.solution.mySqrt_instinct(4)
+        self.assertIsNotNone(int_sqrt)
+        self.assertEqual(2, int_sqrt)
+
+    def test_mySqrt_instinct1(self):
+        int_sqrt = self.solution.mySqrt_instinct(10)
+        self.assertIsNotNone(int_sqrt)
+        self.assertEqual(3, int_sqrt)
+
+    def test_mySqrt_instinct_negative(self):
+        int_sqrt = self.solution.mySqrt_instinct(-1)
+        self.assertIsNone(int_sqrt)
+
+    def test_mySqrtx(self):
+        _delta = 0.0000001
+        int_sqrt = self.solution.mySqrtx(4, _delta)
+        self.assertIsNotNone(int_sqrt)
+        self.assertAlmostEqual(2.0, int_sqrt)
+
+    def test_mySqrtx1(self):
+        _delta = 0.0000001
+        int_sqrt = self.solution.mySqrtx(10, _delta)
+        self.assertIsNotNone(int_sqrt)
+        self.assertAlmostEqual(3.1622776, int_sqrt, delta=_delta)
+
+    def test_mySqrtx_negative(self):
+        _delta = 0.0000001
+        int_sqrt = self.solution.mySqrtx(-1, _delta)
+        self.assertIsNone(int_sqrt)
+
+    def test_mySqrtx_instinct(self):
+        _delta = 0.0000001
+        int_sqrt = self.solution.mySqrtx_instinct(4, _delta)
+        self.assertIsNotNone(int_sqrt)
+        self.assertAlmostEqual(2.0, int_sqrt)
+
+    def test_mySqrtx_instinct1(self):
+        _delta = 0.0000001
+        int_sqrt = self.solution.mySqrtx_instinct(10, _delta)
+        self.assertIsNotNone(int_sqrt)
+        self.assertAlmostEqual(3.1622776, int_sqrt, delta=_delta)
+
+    def test_mySqrtx_instinct_negative(self):
+        _delta = 0.0000001
+        int_sqrt = self.solution.mySqrtx_instinct(-1, _delta)
+        self.assertIsNone(int_sqrt)
