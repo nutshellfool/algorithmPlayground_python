@@ -115,7 +115,7 @@ to see more usage please refer [coverage docs](https://coverage.readthedocs.io/e
 
 ### Recursion
 
-- [ ] [Pow(x, n)](https://leetcode.com/problems/powx-n/)
+- [x] [Pow(x, n)](https://leetcode.com/problems/powx-n/)
 - [ ] [Generate Parentheses](https://leetcode.com/problems/generate-parentheses/)
 - [x] [Validate Binary Search Tree](https://leetcode.com/problems/validate-binary-search-tree/)
 - [x] [Lowest Common Ancestor of a Binary Search Tree](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/)
@@ -126,7 +126,7 @@ to see more usage please refer [coverage docs](https://coverage.readthedocs.io/e
 
 ### Divide & Conquer
 
-- [ ] [Pow(x, n)](https://leetcode.com/problems/powx-n/)
+- [x] [Pow(x, n)](https://leetcode.com/problems/powx-n/)
 - [ ] [Majority Element](https://leetcode.com/problems/majority-element/)
 - [ ] [Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/)
 - [ ] [Minimum Depth of Binary Tree](https://leetcode.com/problems/minimum-depth-of-binary-tree/)
