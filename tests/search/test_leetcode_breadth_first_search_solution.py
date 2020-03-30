@@ -45,6 +45,22 @@ class TestLeetCodeBreadthFirstSearchSolution(TestCase):
         self.assertIsNotNone(min_depth)
         self.assertEqual(0, min_depth)
 
+    def test_minDepth_recursion(self):
+        min_depth = self.solution.minDepth_recursion(self.tree_root)
+        self.assertIsNotNone(min_depth)
+        self.assertEqual(2, min_depth)
+
+    def test_minDepth_recursion_leaf_root(self):
+        leaf_root = TreeNode(1)
+        min_depth = self.solution.minDepth_recursion(leaf_root)
+        self.assertIsNotNone(min_depth)
+        self.assertEqual(1, min_depth)
+
+    def test_minDepth_recursion_none(self):
+        min_depth = self.solution.minDepth_recursion(None)
+        self.assertIsNotNone(min_depth)
+        self.assertEqual(0, min_depth)
+
     def test_levelOrder(self):
         level_order = self.solution.levelOrder(self.tree_root)
         expect_order = [[3], [9, 20], [15, 7]]

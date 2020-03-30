@@ -51,6 +51,20 @@ class Solution(object):
 
         return min_depth
 
+    def minDepth_recursion(self, root):
+        """
+        :type root: TreeNode
+        :rtype: int
+        """
+        if not root:
+            return 0
+        if not root.left:
+            return self.minDepth_recursion(root.right) + 1
+        if not root.right:
+            return self.minDepth_recursion(root.left) + 1
+        return min(self.minDepth_recursion(root.left), self.minDepth_recursion(root.right)) + 1
+
+
     def levelOrder(self, root):
         """
         :type root: TreeNode
