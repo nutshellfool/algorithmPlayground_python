@@ -97,7 +97,7 @@ to see more usage please refer [coverage docs](https://coverage.readthedocs.io/e
 - [ ] [Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/)
 - [ ] [Gas Station](https://lintcode.com/problem/gas-station)
 
-### Breath First Search
+### Breadth First Search
 
 - [ ] [Binary Tree Level Order Traversal](https://leetcode.com/problems/binary-tree-level-order-traversal/)
 - [ ] [Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/)
