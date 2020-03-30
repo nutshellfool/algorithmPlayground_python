@@ -131,7 +131,7 @@ to see more usage please refer [coverage docs](https://coverage.readthedocs.io/e
 - [x] [Pow(x, n)](https://leetcode.com/problems/powx-n/)
 - [ ] [Majority Element](https://leetcode.com/problems/majority-element/)
 - [x] [Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/)
-- [ ] [Minimum Depth of Binary Tree](https://leetcode.com/problems/minimum-depth-of-binary-tree/)
+- [x] [Minimum Depth of Binary Tree](https://leetcode.com/problems/minimum-depth-of-binary-tree/)
 
 ### Greedy
 
