@@ -50,3 +50,49 @@ class Solution(object):
                 stack.append((node.right, level + 1))
 
         return min_depth
+
+    def levelOrder(self, root):
+        """
+        :type root: TreeNode
+        :rtype: List[List[int]]
+        """
+        if not root:
+            return None
+        result = []
+        queue = deque()
+        queue.append(root)
+        while queue:
+            level_list_item = []
+            batch_size = len(queue)
+            for i in xrange(batch_size):
+                node = queue.popleft()
+                level_list_item.append(node.val)
+                if node.left:
+                    queue.append(node.left)
+                if node.right:
+                    queue.append(node.right)
+            result.append(level_list_item)
+
+        return result
+
+    def levelOrder_dfs(self, root):
+        """
+        :type root: TreeNode
+        :rtype: List[List[int]]
+        """
+        if not root:
+            return None
+
+        result = []
+        stack = deque()
+        stack.append((root, 0))
+        while stack:
+            node, level = stack.pop()
+            if len(result) <= level:
+                result.append([])
+            result[level].append(node.val)
+            if node.left:
+                stack.append((node.left, level + 1))
+            if node.right:
+                stack.append((node.right, level + 1))
+        return result

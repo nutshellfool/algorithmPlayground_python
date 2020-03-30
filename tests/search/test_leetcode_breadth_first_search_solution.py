@@ -44,3 +44,26 @@ class TestLeetCodeBreadthFirstSearchSolution(TestCase):
         min_depth = self.solution.minDepth_dfs(None)
         self.assertIsNotNone(min_depth)
         self.assertEqual(0, min_depth)
+
+    def test_levelOrder(self):
+        level_order = self.solution.levelOrder(self.tree_root)
+        expect_order = [[3], [9, 20], [15, 7]]
+        self.assertIsNotNone(level_order)
+        self.assertEqual(expect_order, level_order)
+
+    def test_levelOrder_none(self):
+        level_order = self.solution.levelOrder(None)
+        self.assertIsNone(level_order)
+
+    def test_levelOrder_dfs(self):
+        level_order = self.solution.levelOrder_dfs(self.tree_root)
+        expect_order = [[3], [9, 20], [7, 15]]
+        self.assertIsNotNone(level_order)
+        for i, v in enumerate(level_order):
+            v.sort()
+        # level_order = map(lambda li: li.sort(), level_order)
+        self.assertEqual(expect_order, level_order)
+
+    def test_levelOrder_dfs_none(self):
+        level_order = self.solution.levelOrder_dfs(None)
+        self.assertIsNone(level_order)
