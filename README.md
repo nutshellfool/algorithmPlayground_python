@@ -109,7 +109,6 @@ to see more usage please refer [coverage docs](https://coverage.readthedocs.io/e
 - [x] [Binary Tree Level Order Traversal](https://leetcode.com/problems/binary-tree-level-order-traversal/)
 - [x] [Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/)
 - [x] [Minimum Depth of Binary Tree](https://leetcode.com/problems/minimum-depth-of-binary-tree/)
-- [ ] [Generate Parentheses](https://leetcode.com/problems/generate-parentheses/)
 - [ ] [Binary Tree Right Side View](https://leetcode.com/problems/binary-tree-right-side-view/)
 
 ## Basic algorithm thinking
@@ -117,7 +116,6 @@ to see more usage please refer [coverage docs](https://coverage.readthedocs.io/e
 ### Recursion
 
 - [x] [Pow(x, n)](https://leetcode.com/problems/powx-n/)
-- [ ] [Generate Parentheses](https://leetcode.com/problems/generate-parentheses/)
 - [x] [Validate Binary Search Tree](https://leetcode.com/problems/validate-binary-search-tree/)
 - [x] [Lowest Common Ancestor of a Binary Search Tree](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/)
 - [x] [Lowest Common Ancestor of a Binary Tree](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/)
@@ -125,6 +123,7 @@ to see more usage please refer [coverage docs](https://coverage.readthedocs.io/e
 - [x] [Binary Tree Preorder Traversal](https://leetcode.com/problems/binary-tree-preorder-traversal/)
 - [x] [Binary Tree Postorder Traversal](https://leetcode.com/problems/binary-tree-postorder-traversal/)
 - [x] [Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/)
+- [x] [Generate Parentheses](https://leetcode.com/problems/generate-parentheses/)
 
 ### Divide & Conquer
 
@@ -139,7 +138,7 @@ to see more usage please refer [coverage docs](https://coverage.readthedocs.io/e
 - [ ] [Divide Chocolate](https://leetcode-cn.com/problems/divide-chocolate/)
 
 ### Backtracking
-
+- [x] [Generate Parentheses](https://leetcode.com/problems/generate-parentheses/)
 - [ ] [Restore IP Addresses](https://leetcode.com/problems/restore-ip-addresses/)
 - [ ] [Android Unlock Patterns](https://leetcode.com/problems/android-unlock-patterns/)
 
@@ -225,7 +224,7 @@ and part of the code design problem:
 under the source project the package is named by data structure categories
 (such as linkedList, Stack, Queue, BinarySearchTree, PriorityQueue ...)
 
-> Why use "Arrays" instead of "Array"?  
+> Why use "Arrays" instead of "Array"(also string -> strings)?  
 > Oops, if named as Array in pyCharm IDE, they can not find the test case module under array package.
 > But it works under cli
 
