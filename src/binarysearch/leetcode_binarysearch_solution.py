@@ -123,3 +123,58 @@ class Solution(object):
                 right = mid
 
         return -1.0
+
+    def divide(self, dividend, divisor):
+        """
+        :type dividend: int
+        :type divisor: int
+        :rtype: int
+        """
+        if divisor == 0:
+            return None
+
+        is_negative = (dividend > 0 > divisor) or (dividend < 0 < divisor)
+        result = 0
+        dividend_abs = abs(dividend)
+        divisor_abs = abs(divisor)
+
+        while dividend_abs >= divisor_abs:
+            shift = 0
+            while dividend_abs >= divisor_abs << shift:
+                shift += 1
+            dividend_abs = dividend_abs - (divisor_abs << (shift - 1))
+            result = result + (1 << (shift - 1))
+
+        return -result if is_negative else result
+
+    def divide_instinct(self, dividend, divisor):
+        """
+        :type dividend: int
+        :type divisor: int
+        :rtype: int
+        """
+        if divisor == 0:
+            return None
+
+        is_negative = (dividend > 0 > divisor) or (dividend < 0 < divisor)
+        result = 0
+        dividend_abs = abs(dividend)
+        divisor_abs = abs(divisor)
+
+        add_times = 0
+        while dividend_abs >= divisor_abs:
+            divisor_abs_sum = 0
+            for i in xrange(add_times):
+                divisor_abs_sum += divisor_abs
+
+            if divisor_abs_sum == dividend_abs:
+                result = add_times
+                break
+            elif divisor_abs_sum < dividend_abs:
+                add_times += 1
+            else:
+                add_times -= 1
+                result = add_times
+                break
+
+        return -result if is_negative else result

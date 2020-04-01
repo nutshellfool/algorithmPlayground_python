@@ -129,3 +129,21 @@ class TestLeetCodeBinarySearchSolution(TestCase):
         _delta = 0.0000001
         int_sqrt = self.solution.mySqrtx_instinct(-1, _delta)
         self.assertIsNone(int_sqrt)
+
+    def test_divide(self):
+        result = self.solution.divide(12, 2)
+        self.assertEqual(6, result)
+
+    def test_divide_divisor_zero(self):
+        result = self.solution.divide(12, 0)
+        # self.assertEqual(-1, result)
+        self.assertIsNone(result)
+
+    def test_divide_instinct(self):
+        result = self.solution.divide_instinct(12, 2)
+        self.assertEqual(6, result)
+
+    def test_divide_instinct_divisor_zero(self):
+        result = self.solution.divide_instinct(12, 0)
+        # self.assertEqual(-1, result)
+        self.assertIsNone(result)
