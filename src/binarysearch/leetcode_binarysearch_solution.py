@@ -93,6 +93,7 @@ class Solution(object):
     def mySqrtx(self, x, delta):
         """
         :type x: int
+        :type delta: float
         :rtype: int
         """
         if x < 0:
@@ -108,6 +109,7 @@ class Solution(object):
     def mySqrtx_instinct(self, x, delta):
         """
         :type x: int
+        :type delta: float
         :rtype: int
         """
         if x < 0:
