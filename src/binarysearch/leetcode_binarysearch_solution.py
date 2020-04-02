@@ -149,6 +149,11 @@ class Solution(object):
 
         return -result if is_negative else result
 
+        #   the leetcode problem limit the result range,
+        #   so to AC this problem, you should add following
+        #   tech trick
+        # return min(max(-2147483648, result), 2147483647)
+
     def divide_instinct(self, dividend, divisor):
         """
         :type dividend: int
@@ -180,3 +185,7 @@ class Solution(object):
                 break
 
         return -result if is_negative else result
+        #   the leetcode problem limit the result range,
+        #   so to AC this problem, you should add following
+        #   tech trick
+        # return min(max(-2147483648, result), 2147483647)
