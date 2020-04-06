@@ -91,6 +91,7 @@ to see more usage please refer [coverage docs](https://coverage.readthedocs.io/e
 
 ### Binary Search
 
+- [x] [Binary Search](https://leetcode.com/problems/binary-search/) 
 - [x] [Pow(x, n)](https://leetcode.com/problems/powx-n/)
 - [x] [Sqrt(x)](https://leetcode.com/problems/sqrtx/)
 - [x] [Divide Two Integers](https://leetcode.com/problems/divide-two-integers/)
