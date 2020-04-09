@@ -145,8 +145,8 @@ to see more usage please refer [coverage docs](https://coverage.readthedocs.io/e
 
 ### Dynamic Programming
 
-- [ ] [Fibonacci Number](https://leetcode.com/problems/fibonacci-number/)
-- [ ] [Climbing Stairs](https://leetcode.com/problems/climbing-stairs/)
+- [x] [Fibonacci Number](https://leetcode.com/problems/fibonacci-number/)
+- [x] [Climbing Stairs](https://leetcode.com/problems/climbing-stairs/)
 - [ ] [Edit Distance](https://leetcode.com/problems/edit-distance/)
 - [ ] [Triangle](https://leetcode.com/problems/triangle/)
 - [ ] [Maximum Product Subarray](https://leetcode.com/problems/maximum-product-subarray/)
