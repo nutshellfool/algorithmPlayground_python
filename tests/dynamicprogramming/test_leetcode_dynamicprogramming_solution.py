@@ -54,3 +54,15 @@ class TestLeetCodeDynamicProgrammingSolution(TestCase):
     def test_climbStairs_math_induction_negative(self):
         steps = self.solution.climbStairs_math_induction(-1)
         self.assertIsNone(steps)
+
+    def test_minimumTotal(self):
+        triangle = [[2],
+                    [3, 4],
+                    [6, 5, 7],
+                    [4, 1, 8, 3]]
+        min_total = self.solution.minimumTotal(triangle)
+        self.assertEqual(11, min_total)
+
+    def test_minimumTotal_none(self):
+        min_total = self.solution.minimumTotal(None)
+        self.assertIsNone(min_total)
