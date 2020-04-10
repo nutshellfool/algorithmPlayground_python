@@ -154,3 +154,26 @@ class Solution(object):
             result = max(result, dp[i])
 
         return result
+
+    def coinChange(self, coins, amount):
+        """
+        :type coins: List[int]
+        :type amount: int
+        :rtype: int
+        """
+        if not coins or amount <= 0:
+            return -1
+
+        # dp = [float('inf')] * (amount + 1)
+        # dp = [maxsize] * (amount + 1)
+        dp = [0] * (amount + 1)
+        for i in xrange(amount + 1):
+            dp[i] = amount + 1
+        dp[0] = 0
+
+        for coin in coins:
+            for x in xrange(coin, amount + 1):
+                dp[x] = min(dp[x], dp[x - coin] + 1)
+        # return dp[amount] if dp[amount] != float('inf') else -1
+        # return dp[amount] if dp[amount] != maxsize else -1
+        return -1 if dp[amount] > amount else dp[amount]

@@ -117,3 +117,29 @@ class TestLeetCodeDynamicProgrammingSolution(TestCase):
     def test_lengthOfLIS_none(self):
         len_lis = self.solution.lengthOfLIS(None)
         self.assertEqual(0, len_lis)
+
+    def test_coinChange(self):
+        coins = [1, 2, 5]
+        nums_coin = self.solution.coinChange(coins, 11)
+        self.assertEqual(3, nums_coin)
+
+    def test_coinChange_not_exist(self):
+        nums_coin = self.solution.coinChange([2], 3)
+        self.assertEqual(-1, nums_coin)
+
+    def test_coinChange_none_coins(self):
+        nums_coin = self.solution.coinChange([], 3)
+        self.assertEqual(-1, nums_coin)
+
+    def test_coinChange_negative_amount(self):
+        nums_coin = self.solution.coinChange([1, 2, 5], -1)
+        self.assertEqual(-1, nums_coin)
+
+    #
+    #   A further consideration:
+    #
+    #   what if the amount is a very big value ? for example sys.maxsize
+    #
+    # def test_coinChange_maxint_coin(self):
+    #     nums_coin = self.solution.coinChange([1, maxsize - 2], maxsize - 1)
+    #     self.assertEqual(2, nums_coin)
