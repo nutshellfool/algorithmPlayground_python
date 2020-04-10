@@ -94,3 +94,26 @@ class TestLeetCodeDynamicProgrammingSolution(TestCase):
     def test_maxProduct1_None(self):
         max_product = self.solution.maxProduct1(None)
         self.assertIsNone(max_product)
+
+    def test_lengthOfLIS(self):
+        array = [10, 9, 2, 5, 3, 7, 101, 18]
+        len_lis = self.solution.lengthOfLIS(array)
+        self.assertEqual(4, len_lis)
+
+    def test_lengthOfLIS_descend_order(self):
+        array = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+        len_lis = self.solution.lengthOfLIS(array)
+        self.assertEqual(1, len_lis)
+
+    def test_lengthOfLIS_same(self):
+        array = [9, 9, 9, 9, 9, 9, 9, 9, 9, 9]
+        len_lis = self.solution.lengthOfLIS(array)
+        self.assertEqual(1, len_lis)
+
+    def test_lengthOfLIS_empty(self):
+        len_lis = self.solution.lengthOfLIS([])
+        self.assertEqual(0, len_lis)
+
+    def test_lengthOfLIS_none(self):
+        len_lis = self.solution.lengthOfLIS(None)
+        self.assertEqual(0, len_lis)
