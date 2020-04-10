@@ -89,3 +89,49 @@ class Solution(object):
                                            triangle[i][j]
 
         return position_min_total[0][0]
+
+    def maxProduct(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        if not nums:
+            return None
+
+        row_len = len(nums)
+        dp_max = [0] * row_len
+        dp_min = [0] * row_len
+        dp_max[0] = nums[0]
+        dp_min[0] = nums[0]
+
+        result = nums[0]
+        for i in xrange(1, row_len):
+            if nums[i] >= 0:
+                dp_max[i] = max(nums[i], dp_max[i - 1] * nums[i])
+                dp_min[i] = min(nums[i], dp_min[i - 1] * nums[i])
+            else:
+                dp_max[i] = max(nums[i], dp_min[i - 1] * nums[i])
+                dp_min[i] = min(nums[i], dp_max[i - 1] * nums[i])
+            result = max(dp_max[i], result)
+
+        return result
+
+    def maxProduct1(self, nums):
+        if not nums:
+            return None
+
+        row_len = len(nums)
+        column_len = 2
+        dp = [[0 for i in xrange(column_len)] for j in xrange(row_len)]
+        dp[0][0], dp[0][1] = nums[0], nums[0]
+
+        result = nums[0]
+
+        for i in xrange(1, row_len):
+            # brutal force beauty
+            dp[i][0] = max(dp[i - 1][0] * nums[i], dp[i - 1][1] * nums[i], nums[i])
+            dp[i][1] = min(dp[i - 1][0] * nums[i], dp[i - 1][1] * nums[i], nums[i])
+
+            result = max(result, dp[i][0])
+
+        return result

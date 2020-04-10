@@ -149,7 +149,7 @@ to see more usage please refer [coverage docs](https://coverage.readthedocs.io/e
 - [x] [Climbing Stairs](https://leetcode.com/problems/climbing-stairs/)
 - [ ] [Edit Distance](https://leetcode.com/problems/edit-distance/)
 - [x] [Triangle](https://leetcode.com/problems/triangle/)
-- [ ] [Maximum Product Subarray](https://leetcode.com/problems/maximum-product-subarray/)
+- [x] [Maximum Product Subarray](https://leetcode.com/problems/maximum-product-subarray/)
 - [ ] [Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)
 - [ ] [Best Time to Buy and Sell Stock II](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/)
 - [ ] [Best Time to Buy and Sell Stock III](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/)

@@ -66,3 +66,31 @@ class TestLeetCodeDynamicProgrammingSolution(TestCase):
     def test_minimumTotal_none(self):
         min_total = self.solution.minimumTotal(None)
         self.assertIsNone(min_total)
+
+    def test_maxProduct(self):
+        array = [2, 3, -2, 4]
+        max_product = self.solution.maxProduct(array)
+        self.assertEqual(6, max_product)
+
+    def test_maxProduct_zero(self):
+        array = [-2, 0, -1]
+        max_product = self.solution.maxProduct(array)
+        self.assertEqual(0, max_product)
+
+    def test_maxProduct_None(self):
+        max_product = self.solution.maxProduct(None)
+        self.assertIsNone(max_product)
+
+    def test_maxProduct1(self):
+        array = [2, 3, -2, 4]
+        max_product = self.solution.maxProduct1(array)
+        self.assertEqual(6, max_product)
+
+    def test_maxProduct1_zero(self):
+        array = [-2, 0, -1]
+        max_product = self.solution.maxProduct1(array)
+        self.assertEqual(0, max_product)
+
+    def test_maxProduct1_None(self):
+        max_product = self.solution.maxProduct1(None)
+        self.assertIsNone(max_product)
