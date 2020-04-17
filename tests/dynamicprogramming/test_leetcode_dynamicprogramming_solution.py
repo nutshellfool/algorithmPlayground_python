@@ -215,3 +215,61 @@ class TestLeetCodeDynamicProgrammingSolution(TestCase):
     def test_maxProfit_dp_none(self):
         max_profit = self.solution.maxProfit_dp(None)
         self.assertEqual(0, max_profit)
+
+    def test_maxProfitUnlimitedTransaction(self):
+        stock_prices_array = [7, 1, 5, 3, 6, 4]
+        max_profit = self.solution.maxProfitUnlimitedTransaction(stock_prices_array)
+        self.assertEqual(7, max_profit)
+
+    def test_maxProfitUnlimitedTransaction_ascend(self):
+        stock_prices_array = [1, 2, 3, 4, 5]
+        max_profit = self.solution.maxProfitUnlimitedTransaction(stock_prices_array)
+        self.assertEqual(4, max_profit)
+
+    def test_maxProfitUnlimitedTransaction_descend(self):
+        stock_prices_array = [7, 6, 5, 4, 3, 1]
+        max_profit = self.solution.maxProfitUnlimitedTransaction(stock_prices_array)
+        self.assertEqual(0, max_profit)
+
+    def test_maxProfitUnlimitedTransaction_equal(self):
+        stock_prices_array = [7, 7, 7, 7, 7, 7]
+        max_profit = self.solution.maxProfitUnlimitedTransaction(stock_prices_array)
+        self.assertEqual(0, max_profit)
+
+    def test_maxProfitUnlimitedTransaction_empty_array(self):
+        stock_prices_array = []
+        max_profit = self.solution.maxProfitUnlimitedTransaction(stock_prices_array)
+        self.assertEqual(0, max_profit)
+
+    def test_maxProfitUnlimitedTransaction_none(self):
+        max_profit = self.solution.maxProfitUnlimitedTransaction(None)
+        self.assertEqual(0, max_profit)
+
+    def test_maxProfitUnlimitedTransaction_op(self):
+        stock_prices_array = [7, 1, 5, 3, 6, 4]
+        max_profit = self.solution.maxProfitUnlimitedTransaction_op(stock_prices_array)
+        self.assertEqual(7, max_profit)
+
+    def test_maxProfitUnlimitedTransaction_op_ascend(self):
+        stock_prices_array = [1, 2, 3, 4, 5]
+        max_profit = self.solution.maxProfitUnlimitedTransaction_op(stock_prices_array)
+        self.assertEqual(4, max_profit)
+
+    def test_maxProfitUnlimitedTransaction_op_descend(self):
+        stock_prices_array = [7, 6, 5, 4, 3, 1]
+        max_profit = self.solution.maxProfitUnlimitedTransaction_op(stock_prices_array)
+        self.assertEqual(0, max_profit)
+
+    def test_maxProfitUnlimitedTransaction_op_equal(self):
+        stock_prices_array = [7, 7, 7, 7, 7, 7]
+        max_profit = self.solution.maxProfitUnlimitedTransaction_op(stock_prices_array)
+        self.assertEqual(0, max_profit)
+
+    def test_maxProfitUnlimitedTransaction_op_empty_array(self):
+        stock_prices_array = []
+        max_profit = self.solution.maxProfitUnlimitedTransaction_op(stock_prices_array)
+        self.assertEqual(0, max_profit)
+
+    def test_maxProfitUnlimitedTransaction_op_none(self):
+        max_profit = self.solution.maxProfitUnlimitedTransaction_op(None)
+        self.assertEqual(0, max_profit)

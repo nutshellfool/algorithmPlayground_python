@@ -235,3 +235,35 @@ class Solution(object):
                 max_profit[i][1][k] = max(max_profit[i - 1][0][k - 1] - prices[i], max_profit[i - 1][1][k])
 
         return max(max_profit[len(prices) - 1][0])
+
+    def maxProfitUnlimitedTransaction(self, prices):
+        """
+        :type prices: List[int]
+        :rtype: int
+        """
+        if not prices:
+            return 0
+
+        _MAX_TRANSACTION_NUM = len(prices) // 2
+
+        _max_profit = [[[0 for k in xrange(_MAX_TRANSACTION_NUM + 1)] for j in xrange(2)] for i in xrange(len(prices))]
+
+        for k in xrange(_MAX_TRANSACTION_NUM + 1):
+            _max_profit[0][0][k] = 0
+            _max_profit[0][1][k] = - prices[0]
+
+        for i in xrange(1, len(prices)):
+            for k in xrange(_MAX_TRANSACTION_NUM):
+                _max_profit[i][0][k] = max(_max_profit[i - 1][1][k] + prices[i], _max_profit[i - 1][0][k])
+                _max_profit[i][1][k] = max(_max_profit[i - 1][0][k - 1] - prices[i], _max_profit[i - 1][1][k])
+
+        return max(_max_profit[len(prices) - 1][0])
+
+    def maxProfitUnlimitedTransaction_op(self, prices):
+        if not prices:
+            return 0
+        _max_profit = 0
+        for i in xrange(1, len(prices)):
+            if prices[i] > prices[i - 1]:
+                _max_profit += (prices[i] - prices[i - 1])
+        return _max_profit
