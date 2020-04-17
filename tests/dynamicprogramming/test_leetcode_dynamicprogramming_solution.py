@@ -162,11 +162,11 @@ class TestLeetCodeDynamicProgrammingSolution(TestCase):
     def test_maxProfit_empty_array(self):
         stock_prices_array = []
         max_profit = self.solution.maxProfit(stock_prices_array)
-        self.assertIsNone(max_profit)
+        self.assertEqual(0, max_profit)
 
     def test_maxProfit_none(self):
         max_profit = self.solution.maxProfit(None)
-        self.assertIsNone(max_profit)
+        self.assertEqual(0, max_profit)
 
     def test_maxProfit_instinct(self):
         stock_prices_array = [7, 1, 5, 3, 6, 4]
@@ -186,11 +186,11 @@ class TestLeetCodeDynamicProgrammingSolution(TestCase):
     def test_maxProfit_instinct_empty_array(self):
         stock_prices_array = []
         max_profit = self.solution.maxProfit_instinct(stock_prices_array)
-        self.assertIsNone(max_profit)
+        self.assertEqual(0, max_profit)
 
     def test_maxProfit_instinct_none(self):
         max_profit = self.solution.maxProfit_instinct(None)
-        self.assertIsNone(max_profit)
+        self.assertEqual(0, max_profit)
 
     def test_maxProfit_dp(self):
         stock_prices_array = [7, 1, 5, 3, 6, 4]
@@ -210,8 +210,8 @@ class TestLeetCodeDynamicProgrammingSolution(TestCase):
     def test_maxProfit_dp_empty_array(self):
         stock_prices_array = []
         max_profit = self.solution.maxProfit_dp(stock_prices_array)
-        self.assertIsNone(max_profit)
+        self.assertEqual(0, max_profit)
 
     def test_maxProfit_dp_none(self):
         max_profit = self.solution.maxProfit_dp(None)
-        self.assertIsNone(max_profit)
+        self.assertEqual(0, max_profit)

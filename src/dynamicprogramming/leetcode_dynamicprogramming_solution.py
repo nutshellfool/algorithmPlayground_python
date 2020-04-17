@@ -185,7 +185,7 @@ class Solution(object):
         :rtype: int
         """
         if not prices:
-            return None
+            return 0
 
         min_price = maxsize
         max_profit = 0
@@ -198,7 +198,7 @@ class Solution(object):
 
     def maxProfit_instinct(self, prices):
         if not prices:
-            return None
+            return 0
 
         max_profit = 0
         for i, price_i in enumerate(prices):
@@ -209,7 +209,7 @@ class Solution(object):
 
     def maxProfit_dp(self, prices):
         if not prices:
-            return None
+            return 0
 
         # max_profit(i, j, k)
         #
