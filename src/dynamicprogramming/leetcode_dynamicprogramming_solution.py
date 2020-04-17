@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from sys import maxsize
 
 
 class Solution(object):
@@ -177,3 +178,60 @@ class Solution(object):
         # return dp[amount] if dp[amount] != float('inf') else -1
         # return dp[amount] if dp[amount] != maxsize else -1
         return -1 if dp[amount] > amount else dp[amount]
+
+    def maxProfit(self, prices):
+        """
+        :type prices: List[int]
+        :rtype: int
+        """
+        if not prices:
+            return None
+
+        min_price = maxsize
+        max_profit = 0
+        for i, price in enumerate(prices):
+            if price < min_price:
+                min_price = price
+            max_profit = max(max_profit, (price - min_price))
+
+        return max_profit
+
+    def maxProfit_instinct(self, prices):
+        if not prices:
+            return None
+
+        max_profit = 0
+        for i, price_i in enumerate(prices):
+            for j in range(i + 1, len(prices)):
+                profit = prices[j] - price_i
+                max_profit = max(max_profit, profit)
+        return max_profit
+
+    def maxProfit_dp(self, prices):
+        if not prices:
+            return None
+
+        # max_profit(i, j, k)
+        #
+        #   i = 0 ... i day
+        #   j = 0, 1
+        #   k = 0, 1, ... k
+        #
+        #   i means day indices
+        #   j means stock holding status (0: do NoT holding, 1: holding )
+        #   k means already completed transaction times
+        _MAX_TRANSACTION_NUM = 1
+        max_profit = [[[0 for k in range(_MAX_TRANSACTION_NUM + 1)] for j in range(2)] for i in range(len(prices))]
+
+        for k in xrange(_MAX_TRANSACTION_NUM + 1):
+            max_profit[0][0][k] = 0
+            max_profit[0][1][k] = - prices[0]
+
+        for i in xrange(1, len(prices)):
+            for k in xrange(_MAX_TRANSACTION_NUM):
+                # 'buy-in' can be count as a transaction
+                # 'sell-out' should NOT count again
+                max_profit[i][0][k] = max(max_profit[i - 1][1][k] + prices[i], max_profit[i - 1][0][k])
+                max_profit[i][1][k] = max(max_profit[i - 1][0][k - 1] - prices[i], max_profit[i - 1][1][k])
+
+        return max(max_profit[len(prices) - 1][0])
