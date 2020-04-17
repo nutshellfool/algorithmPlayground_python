@@ -273,3 +273,32 @@ class TestLeetCodeDynamicProgrammingSolution(TestCase):
     def test_maxProfitUnlimitedTransaction_op_none(self):
         max_profit = self.solution.maxProfitUnlimitedTransaction_op(None)
         self.assertEqual(0, max_profit)
+
+    def test_maxProfit2limitedTransaction(self):
+        stock_prices_array = [3, 3, 5, 0, 0, 3, 1, 4]
+        max_profit = self.solution.maxProfit2limitedTransaction(stock_prices_array)
+        self.assertEqual(6, max_profit)
+
+    def test_maxProfit2limitedTransaction_ascend(self):
+        stock_prices_array = [1, 2, 3, 4, 5]
+        max_profit = self.solution.maxProfit2limitedTransaction(stock_prices_array)
+        self.assertEqual(4, max_profit)
+
+    def test_maxProfit2limitedTransaction_descend(self):
+        stock_prices_array = [7, 6, 5, 4, 3, 1]
+        max_profit = self.solution.maxProfit2limitedTransaction(stock_prices_array)
+        self.assertEqual(0, max_profit)
+
+    def test_maxProfit2limitedTransaction_equal(self):
+        stock_prices_array = [7, 7, 7, 7, 7, 7]
+        max_profit = self.solution.maxProfit2limitedTransaction(stock_prices_array)
+        self.assertEqual(0, max_profit)
+
+    def test_maxProfit2limitedTransaction_empty_array(self):
+        stock_prices_array = []
+        max_profit = self.solution.maxProfit2limitedTransaction(stock_prices_array)
+        self.assertEqual(0, max_profit)
+
+    def test_maxProfit2limitedTransaction_none(self):
+        max_profit = self.solution.maxProfit2limitedTransaction(None)
+        self.assertEqual(0, max_profit)
