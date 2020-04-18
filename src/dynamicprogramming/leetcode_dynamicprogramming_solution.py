@@ -355,3 +355,21 @@ class Solution(object):
             _max_profit[i][2] = _max_profit[i - 1][0]
 
         return max(_max_profit[len(prices) - 1])
+
+    def maxProfitWithTransactionFee(self, prices, fee):
+        """
+        :type prices: List[int]
+        :type fee: int
+        :rtype: int
+        """
+        if not prices or fee < 0:
+            return 0
+
+        _max_profit = [[0 for j in xrange(2)] for i in xrange(len(prices))]
+        _max_profit[0][0] = 0
+        _max_profit[0][1] = -prices[0]
+
+        for i in xrange(1, len(prices)):
+            _max_profit[i][0] = max(_max_profit[i - 1][0], _max_profit[i - 1][1] + prices[i] - fee)
+            _max_profit[i][1] = max(_max_profit[i - 1][1], _max_profit[i - 1][0] - prices[i])
+        return _max_profit[len(prices) - 1][0]

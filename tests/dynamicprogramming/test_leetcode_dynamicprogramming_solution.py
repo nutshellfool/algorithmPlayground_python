@@ -896,3 +896,27 @@ class TestLeetCodeDynamicProgrammingSolution(TestCase):
     def test_maxProfitWithCooldown_none(self):
         max_profit = self.solution.maxProfitWithCooldown(None)
         self.assertEqual(0, max_profit)
+
+    def test_maxProfitWithTransactionFee(self):
+        stock_price_array = [1, 3, 2, 8, 4, 9]
+        max_profit = self.solution.maxProfitWithTransactionFee(stock_price_array, 2)
+        self.assertEqual(8, max_profit)
+
+    def test_maxProfitWithTransactionFeeDescend(self):
+        stock_price_array = [5, 4, 3, 2, 1]
+        max_profit = self.solution.maxProfitWithTransactionFee(stock_price_array, 2)
+        self.assertEqual(0, max_profit)
+
+    def test_maxProfitWithTransactionFee_empty(self):
+        stock_price_array = []
+        max_profit = self.solution.maxProfitWithTransactionFee(stock_price_array, 2)
+        self.assertEqual(0, max_profit)
+
+    def test_maxProfitWithTransactionFee_none(self):
+        max_profit = self.solution.maxProfitWithTransactionFee(None, 2)
+        self.assertEqual(0, max_profit)
+
+    def test_maxProfitWithTransactionFee_negative_fee(self):
+        stock_price_array = [1, 3, 2, 8, 4, 9]
+        max_profit = self.solution.maxProfitWithTransactionFee(stock_price_array, -2)
+        self.assertEqual(0, max_profit)
