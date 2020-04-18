@@ -334,3 +334,24 @@ class Solution(object):
                 profits[i] = max(profits[i - 1], pre_profit)
 
         return profits[-1]
+
+    def maxProfitWithCooldown(self, prices):
+        """
+        :type prices: List[int]
+        :rtype: int
+        """
+        if not prices:
+            return 0
+
+        _max_profit = [[0 for j in xrange(3)] for i in xrange(len(prices))]
+
+        _max_profit[0][0] = 0
+        _max_profit[0][1] = -prices[0]
+        _max_profit[0][2] = 0
+
+        for i in xrange(1, len(prices)):
+            _max_profit[i][0] = max(_max_profit[i - 1][0], _max_profit[i - 1][1] + prices[i])
+            _max_profit[i][1] = max(_max_profit[i - 1][1], _max_profit[i - 1][2] - prices[i])
+            _max_profit[i][2] = _max_profit[i - 1][0]
+
+        return max(_max_profit[len(prices) - 1])

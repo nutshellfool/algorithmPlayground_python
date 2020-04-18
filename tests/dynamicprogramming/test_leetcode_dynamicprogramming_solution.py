@@ -882,3 +882,17 @@ class TestLeetCodeDynamicProgrammingSolution(TestCase):
                              794, 51]
         max_profit = self.solution.maxProfitklimitedTransaction_op(1000000000, stock_price_array)
         self.assertEqual(1648961, max_profit)
+
+    def test_maxProfitWithCooldown(self):
+        stock_price_array = [1, 2, 3, 0, 2]
+        max_profit = self.solution.maxProfitWithCooldown(stock_price_array)
+        self.assertEqual(3, max_profit)
+
+    def test_maxProfitWithCooldown_empty(self):
+        stock_price_array = []
+        max_profit = self.solution.maxProfitWithCooldown(stock_price_array)
+        self.assertEqual(0, max_profit)
+
+    def test_maxProfitWithCooldown_none(self):
+        max_profit = self.solution.maxProfitWithCooldown(None)
+        self.assertEqual(0, max_profit)
