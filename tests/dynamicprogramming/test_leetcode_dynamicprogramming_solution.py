@@ -920,3 +920,15 @@ class TestLeetCodeDynamicProgrammingSolution(TestCase):
         stock_price_array = [1, 3, 2, 8, 4, 9]
         max_profit = self.solution.maxProfitWithTransactionFee(stock_price_array, -2)
         self.assertEqual(0, max_profit)
+
+    def test_minDistance(self):
+        __min_edit_distance = self.solution.minDistance('horse', 'ros')
+        self.assertEqual(3, __min_edit_distance)
+
+    def test_minDistance1(self):
+        __min_edit_distance = self.solution.minDistance('intention', 'execution')
+        self.assertEqual(5, __min_edit_distance)
+
+    def test_minDistance2(self):
+        __min_edit_distance = self.solution.minDistance('intention', 'nation')
+        self.assertEqual(4, __min_edit_distance)

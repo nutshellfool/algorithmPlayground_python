@@ -373,3 +373,27 @@ class Solution(object):
             _max_profit[i][0] = max(_max_profit[i - 1][0], _max_profit[i - 1][1] + prices[i] - fee)
             _max_profit[i][1] = max(_max_profit[i - 1][1], _max_profit[i - 1][0] - prices[i])
         return _max_profit[len(prices) - 1][0]
+
+    def minDistance(self, word1, word2):
+        """
+        :type word1: str
+        :type word2: str
+        :rtype: int
+        """
+        _min_distance = [[0 for j in xrange(len(word2) + 1)] for i in xrange(len(word1) + 1)]
+
+        for i in xrange(len(word1) + 1):
+            _min_distance[i][0] = i
+
+        for j in xrange(len(word2) + 1):
+            _min_distance[0][j] = j
+
+        for i in xrange(1, len(word1) + 1):
+            for j in xrange(1, len(word2) + 1):
+                if word1[i - 1] == word2[j - 1]:
+                    _min_distance[i][j] = _min_distance[i - 1][j - 1]
+                else:
+                    _min_distance[i][j] = 1 + min(_min_distance[i - 1][j], _min_distance[i][j - 1],
+                                                  _min_distance[i - 1][j - 1])
+
+        return _min_distance[len(word1)][len(word2)]
