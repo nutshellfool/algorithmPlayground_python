@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from src.unionfind.unionfind_solution import UnionFind
 
 
 class GridUnionFind:
@@ -91,3 +92,20 @@ class Solution(object):
     def _is_valid(self, grid, x_len, y_len, x, y, visited):
         return 0 <= x < x_len and 0 <= y < y_len \
                and grid[x][y] == '1' and (x, y) not in visited
+
+    def findCircleNum(self, M):
+        """
+        :type M: List[List[int]]
+        :rtype: int
+        """
+        if not M or not M[0]:
+            return 0
+        _row_len, _column_len = len(M), len(M[0])
+
+        _union_find = UnionFind(_row_len)
+
+        for i in xrange(_row_len):
+            for j in xrange(i):
+                if M[i][j] == 1:
+                    _union_find.union(i, j)
+        return _union_find.count

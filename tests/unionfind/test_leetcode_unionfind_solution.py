@@ -46,3 +46,25 @@ class TestLeetCodeUnionFindSolution(TestCase):
         ]
         num_island = self.__solution.numIslands_dfs(grid)
         self.assertEqual(3, num_island)
+
+    def test_findCircleNum(self):
+        matrix = [[1, 1, 0],
+                  [1, 1, 0],
+                  [0, 0, 1]]
+        number_of_circles = self.__solution.findCircleNum(matrix)
+        self.assertEqual(2, number_of_circles)
+
+    def test_findCircleNum1(self):
+        matrix = [[1, 1, 0],
+                  [1, 1, 1],
+                  [0, 1, 1]]
+        number_of_circles = self.__solution.findCircleNum(matrix)
+        self.assertEqual(1, number_of_circles)
+
+    def test_findCircleNum2(self):
+        matrix = [[1, 0, 0, 1],
+                  [0, 1, 1, 0],
+                  [0, 1, 1, 1],
+                  [1, 0, 1, 1]]
+        number_of_circles = self.__solution.findCircleNum(matrix)
+        self.assertEqual(1, number_of_circles)
