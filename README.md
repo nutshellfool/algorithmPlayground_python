@@ -170,7 +170,7 @@ to see more usage please refer [coverage docs](https://coverage.readthedocs.io/e
 
 ### Union-find
 
-- [ ] [Number of Islands](https://leetcode.com/problems/number-of-islands/)
+- [x] [Number of Islands](https://leetcode.com/problems/number-of-islands/)
 - [ ] [Friend Circles](https://leetcode.com/problems/friend-circles/)
 
 ### Bitmap
