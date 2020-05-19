@@ -142,3 +142,83 @@ class TestLeetCodeTreeSolution(TestCase):
         lca = self.solution.lowestCommonAncestorBST(node_root, node_root.left, node_root.right)
         self.assertIsNotNone(lca)
         self.assertEqual(node_root, lca)
+
+    def test_rightSideView(self):
+        node_root = TreeNode(1)
+        node_root.left = TreeNode(2)
+        node_root.right = TreeNode(3)
+        node_root.left.right = TreeNode(5)
+        node_root.right.right = TreeNode(4)
+
+        right_side_view_list = self.solution.rightSideView(node_root)
+        self.assertIsNotNone(right_side_view_list)
+        self.assertEqual(3, len(right_side_view_list))
+        self.assertEqual(1, right_side_view_list[0])
+        self.assertEqual(3, right_side_view_list[1])
+        self.assertEqual(4, right_side_view_list[2])
+
+    def test_rightSideView1(self):
+        node_root = TreeNode(1)
+        node_root.left = TreeNode(2)
+        node_root.left.right = TreeNode(5)
+
+        right_side_view_list = self.solution.rightSideView(node_root)
+        self.assertIsNotNone(right_side_view_list)
+        self.assertEqual(3, len(right_side_view_list))
+        self.assertEqual(1, right_side_view_list[0])
+        self.assertEqual(2, right_side_view_list[1])
+        self.assertEqual(5, right_side_view_list[2])
+
+    def test_rightSideView_none(self):
+        node_root = TreeNode(1)
+
+        right_side_view_list = self.solution.rightSideView(None)
+        self.assertIsNone(right_side_view_list)
+
+    def test_rightSideView_root(self):
+        node_root = TreeNode(1)
+
+        right_side_view_list = self.solution.rightSideView(node_root)
+        self.assertIsNotNone(right_side_view_list)
+        self.assertEqual(1, len(right_side_view_list))
+        self.assertEqual(1, right_side_view_list[0])
+
+    def test_rightSideView_dfs(self):
+        node_root = TreeNode(1)
+        node_root.left = TreeNode(2)
+        node_root.right = TreeNode(3)
+        node_root.left.right = TreeNode(5)
+        node_root.right.right = TreeNode(4)
+
+        right_side_view_list = self.solution.rightSideView_dfs(node_root)
+        self.assertIsNotNone(right_side_view_list)
+        self.assertEqual(3, len(right_side_view_list))
+        self.assertEqual(1, right_side_view_list[0])
+        self.assertEqual(3, right_side_view_list[1])
+        self.assertEqual(4, right_side_view_list[2])
+
+    def test_rightSideView_dfs1(self):
+        node_root = TreeNode(1)
+        node_root.left = TreeNode(2)
+        node_root.left.right = TreeNode(5)
+
+        right_side_view_list = self.solution.rightSideView_dfs(node_root)
+        self.assertIsNotNone(right_side_view_list)
+        self.assertEqual(3, len(right_side_view_list))
+        self.assertEqual(1, right_side_view_list[0])
+        self.assertEqual(2, right_side_view_list[1])
+        self.assertEqual(5, right_side_view_list[2])
+
+    def test_rightSideView_dfs_none(self):
+        node_root = TreeNode(1)
+
+        right_side_view_list = self.solution.rightSideView_dfs(None)
+        self.assertIsNone(right_side_view_list)
+
+    def test_rightSideView_dfs_root(self):
+        node_root = TreeNode(1)
+
+        right_side_view_list = self.solution.rightSideView_dfs(node_root)
+        self.assertIsNotNone(right_side_view_list)
+        self.assertEqual(1, len(right_side_view_list))
+        self.assertEqual(1, right_side_view_list[0])

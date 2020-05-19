@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import operator
 from collections import deque
 from sys import maxsize
 
@@ -177,3 +178,56 @@ class Solution(object):
         elif root.val < p.val and root.val < q.val:
             return self.lowestCommonAncestorBST(root.right, p, q)
         return root
+
+    def rightSideView(self, root):
+        """
+        :type root: TreeNode
+        :rtype: List[int]
+        """
+        if not root:
+            return root
+
+        result = []
+
+        queue = deque()
+        queue.append(root)
+
+        while queue:
+            batch_size = len(queue)
+            for i in xrange(batch_size):
+                v = queue.popleft()
+
+                if v.left:
+                    queue.append(v.left)
+                if v.right:
+                    queue.append(v.right)
+
+                if i == batch_size - 1:
+                    result.append(v.val)
+
+        return result
+
+    def rightSideView_dfs(self, root):
+        """
+        :type root: TreeNode
+        :rtype: List[int]
+        """
+        if not root:
+            return root
+
+        result = []
+
+        stack = deque()
+        stack.append((root, 0))
+        while stack:
+            node, level = stack.pop()
+            if len(result) <= level:
+                result.append([])
+            if len(result[level]) == 0:
+                result[level].append(node.val)
+            if node.left:
+                stack.append((node.left, level + 1))
+            if node.right:
+                stack.append((node.right, level + 1))
+
+        return reduce(operator.concat, result)
