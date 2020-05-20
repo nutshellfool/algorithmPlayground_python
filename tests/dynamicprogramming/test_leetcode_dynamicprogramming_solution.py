@@ -932,3 +932,19 @@ class TestLeetCodeDynamicProgrammingSolution(TestCase):
     def test_minDistance2(self):
         __min_edit_distance = self.solution.minDistance('intention', 'nation')
         self.assertEqual(4, __min_edit_distance)
+
+    def test_superEggDrop(self):
+        certainty_min_move = self.solution.superEggDrop(1, 2)
+        self.assertEqual(2, certainty_min_move)
+
+    def test_superEggDrop1(self):
+        certainty_min_move = self.solution.superEggDrop(2, 6)
+        self.assertEqual(3, certainty_min_move)
+
+    def test_superEggDrop2(self):
+        certainty_min_move = self.solution.superEggDrop(3, 14)
+        self.assertEqual(4, certainty_min_move)
+
+    def test_superEggDrop3(self):
+        certainty_min_move = self.solution.superEggDrop(2, 100)
+        self.assertEqual(14, certainty_min_move)

@@ -397,3 +397,17 @@ class Solution(object):
                                                   _min_distance[i - 1][j - 1])
 
         return _min_distance[len(word1)][len(word2)]
+
+    def superEggDrop(self, K, N):
+        """
+        :type K: int
+        :type N: int
+        :rtype: int
+        """
+        _dp = [[0 for j in range(K + 1)] for i in range(N + 1)]
+        _certainty_min_move = 0
+        while _dp[_certainty_min_move][K] < N:
+            _certainty_min_move += 1
+            for l in range(1, K + 1):
+                _dp[_certainty_min_move][l] = _dp[_certainty_min_move - 1][l - 1] + _dp[_certainty_min_move - 1][l] + 1
+        return _certainty_min_move
