@@ -158,6 +158,36 @@ class TestLeetCodeHeapSolution(TestCase):
         self.assertIsNotNone(median_sliding_window_array)
         self.assertEqual(input_array, median_sliding_window_array)
 
+    def test_topKFrequent(self):
+        _nums = [1, 1, 1, 2, 2, 3]
+        _top_k = self.solution.topKFrequent(_nums, 2)
+        self.assertIsNotNone(_top_k)
+        self.assertEqual(2, len(_top_k))
+        self.assertEqual(1, _top_k[0])
+        self.assertEqual(2, _top_k[1])
+
+    def test_topKFrequent1(self):
+        _nums = [1]
+        _top_k = self.solution.topKFrequent(_nums, 1)
+        self.assertIsNotNone(_top_k)
+        self.assertEqual(1, len(_top_k))
+        self.assertEqual(1, _top_k[0])
+
+    def test_topKFrequent_instinct(self):
+        _nums = [1, 1, 1, 2, 2, 3]
+        _top_k = self.solution.topKFrequent_instinct(_nums, 2)
+        self.assertIsNotNone(_top_k)
+        self.assertEqual(2, len(_top_k))
+        self.assertEqual(1, _top_k[0])
+        self.assertEqual(2, _top_k[1])
+
+    def test_topKFrequent_instinct1(self):
+        _nums = [1]
+        _top_k = self.solution.topKFrequent_instinct(_nums, 1)
+        self.assertIsNotNone(_top_k)
+        self.assertEqual(1, len(_top_k))
+        self.assertEqual(1, _top_k[0])
+
     def test_medianFinder(self):
         finder = MedianFinder()
         finder.addNum(1)

@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 import heapq
+import itertools
+from collections import Counter
 from collections import deque
 
 try:
@@ -172,6 +174,24 @@ class Solution(object):
             median = _array_median(nums[i:i + k])
             result.append(median)
 
+        return result
+
+    def topKFrequent(self, nums, k):
+        if not nums or k <= 0 or k > len(nums):
+            return []
+        bucket = [[] for _ in nums]
+        for num, freq in Counter(nums).items():
+            bucket[len(nums) - freq].append(num)
+        return list(itertools.chain(*bucket))[:k]
+
+    def topKFrequent_instinct(self, nums, k):
+        if not nums or k <= 0 or k > len(nums):
+            return []
+        _counter_dict = Counter(nums)
+        _top_k_tuple = _counter_dict.most_common(k)
+        result = []
+        for item_tuple in _top_k_tuple:
+            result.append(item_tuple[0])
         return result
 
 
