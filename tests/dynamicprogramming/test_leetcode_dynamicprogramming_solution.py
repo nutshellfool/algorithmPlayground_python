@@ -948,3 +948,13 @@ class TestLeetCodeDynamicProgrammingSolution(TestCase):
     def test_superEggDrop3(self):
         certainty_min_move = self.solution.superEggDrop(2, 100)
         self.assertEqual(14, certainty_min_move)
+
+    def test_maxSubArray(self):
+        _array = [-2, 1, -3, 4, -1, 2, 1, -5, 4]
+        _max_subarray_sum = self.solution.maxSubArray(_array)
+        self.assertEqual(6, _max_subarray_sum)
+
+    def test_maxSubArray_empty(self):
+        _array = []
+        _max_subarray_sum = self.solution.maxSubArray(_array)
+        self.assertEqual(0, _max_subarray_sum)

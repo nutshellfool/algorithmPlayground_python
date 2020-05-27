@@ -411,3 +411,20 @@ class Solution(object):
             for l in range(1, K + 1):
                 _dp[_certainty_min_move][l] = _dp[_certainty_min_move - 1][l - 1] + _dp[_certainty_min_move - 1][l] + 1
         return _certainty_min_move
+
+    def maxSubArray(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        if not nums:
+            return 0
+        _dp = [0 for i in range(len(nums))]
+        _dp[0] = nums[0]
+        _max_subarray_sum = _dp[0]
+
+        for i in range(1, len(nums)):
+            _dp[i] = max(0, _dp[i - 1]) + nums[i]
+            _max_subarray_sum = max(_max_subarray_sum, _dp[i])
+
+        return _max_subarray_sum
