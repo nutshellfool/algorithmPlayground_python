@@ -189,9 +189,10 @@ class Solution(object):
             return []
         _counter_dict = Counter(nums)
         _top_k_tuple = _counter_dict.most_common(k)
-        result = []
-        for item_tuple in _top_k_tuple:
-            result.append(item_tuple[0])
+        result = list(map(lambda a: a[0], _top_k_tuple))
+        # result = []
+        # for item_tuple in _top_k_tuple:
+        #     result.append(item_tuple[0])
         return result
 
 
