@@ -29,6 +29,7 @@ to see more usage please refer [coverage docs](https://coverage.readthedocs.io/e
 - [x] [Container With Most Water](https://leetcode.com/problems/container-with-most-water)
 - [x] [Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/)
 - [ ] [Maximum Swap](https://leetcode.com/problems/maximum-swap/)
+- [x] [Sort Colors](https://leetcode.com/problems/sort-colors/)
 
 ### Linked List
 

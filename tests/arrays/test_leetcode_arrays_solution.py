@@ -133,3 +133,35 @@ class TestArrayLeetCodeSolution(TestCase):
         unit_of_trapped = self.solution.trap_dynamic_programming(height)
         self.assertIsNotNone(unit_of_trapped)
         self.assertEqual(1, unit_of_trapped)
+
+    def test_sortColors(self):
+        _color_array = [2, 0, 2, 1, 1, 0]
+        _sorted_array = self.solution.sortColors(_color_array)
+        self.assertIsNotNone(_sorted_array)
+        self.assertEqual(6, len(_sorted_array))
+        self.assertEqual([0, 0, 1, 1, 2, 2], _sorted_array)
+
+    def test_sortColors_None(self):
+        _sorted_array = self.solution.sortColors(None)
+        self.assertIsNone(_sorted_array)
+
+    def test_sortColors_empty(self):
+        _sorted_array = self.solution.sortColors([])
+        self.assertIsNotNone(_sorted_array)
+        self.assertEqual(0, len(_sorted_array))
+
+    def test_sortColors_instinct(self):
+        _color_array = [2, 0, 2, 1, 1, 0]
+        _sorted_array = self.solution.sortColors_instinct(_color_array)
+        self.assertIsNotNone(_sorted_array)
+        self.assertEqual(6, len(_sorted_array))
+        self.assertEqual([0, 0, 1, 1, 2, 2], _sorted_array)
+
+    def test_sortColors_instinct_None(self):
+        _sorted_array = self.solution.sortColors_instinct(None)
+        self.assertIsNone(_sorted_array)
+
+    def test_sortColors_instinct_empty(self):
+        _sorted_array = self.solution.sortColors_instinct([])
+        self.assertIsNotNone(_sorted_array)
+        self.assertEqual(0, len(_sorted_array))

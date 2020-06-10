@@ -13,7 +13,9 @@ class Solution(object):
         left_pointer, right_pointer = 0, len(height) - 1
         max_area = 0
         while left_pointer < right_pointer:
-            max_area = max(max_area, min(height[left_pointer], height[right_pointer]) * (right_pointer - left_pointer))
+            max_area = max(max_area,
+                           min(height[left_pointer], height[right_pointer]) * (
+                                   right_pointer - left_pointer))
             if height[left_pointer] < height[right_pointer]:
                 left_pointer += 1
             else:
@@ -96,7 +98,8 @@ class Solution(object):
         unit_of_trapped = 0
         left_max, right_max = [0] * (len(height) + 1), [0] * (len(height) + 1)
 
-        left_max[0], right_max[len(height) - 1] = height[0], height[len(height) - 1]
+        left_max[0], right_max[len(height) - 1] = height[0], height[
+            len(height) - 1]
         for i in xrange(1, len(height)):
             left_max[i] = max(left_max[i - 1], height[i])
 
@@ -107,3 +110,44 @@ class Solution(object):
             bucket_min = min(left_max[i], right_max[i])
             unit_of_trapped += bucket_min - height[i]
         return unit_of_trapped
+
+    @staticmethod
+    def sortColors(nums):
+        """
+        :type nums: List[int]
+        :rtype: None Do not return anything, modify nums in-place instead.
+        """
+
+        # this is a Dutch national flag problem, algorithm by Edsger Dijkstra
+        # https://en.wikipedia.org/wiki/Dutch_national_flag_problem
+        if not nums:
+            return nums
+
+        _pointer_front = _current = 0
+        _pointer_end = len(nums) - 1
+
+        while _current <= _pointer_end:
+            if nums[_current] == 0:
+                nums[_pointer_front], nums[_current] = nums[_current], nums[
+                    _pointer_front]
+                _current += 1
+                _pointer_front += 1
+            elif nums[_current] == 2:
+                nums[_current], nums[_pointer_end] = nums[_pointer_end], nums[
+                    _current]
+                _pointer_end -= 1
+            else:
+                _current += 1
+
+        return nums
+
+    @staticmethod
+    def sortColors_instinct(nums):
+        """
+        :type nums: List[int]
+        :rtype: None Do not return anything, modify nums in-place instead.
+        """
+        if not nums:
+            return nums
+
+        return sorted(nums)
