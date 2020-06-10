@@ -177,3 +177,15 @@ class TestArrayLeetCodeSolution(TestCase):
         self.solution.moveZeroes(_array)
         self.assertIsNotNone(_array)
         self.assertEqual([3, 1, 12, 0, 0], _array)
+
+    def test_removeDuplicates(self):
+        _array = [1, 1, 2]
+        size = self.solution.removeDuplicates(_array)
+        self.assertIsNotNone(_array)
+        self.assertEqual(2, size)
+
+    def test_removeDuplicates1(self):
+        _array = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4]
+        size = self.solution.removeDuplicates(_array)
+        self.assertIsNotNone(_array)
+        self.assertEqual(5, size)

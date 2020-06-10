@@ -168,3 +168,21 @@ class Solution(object):
                     last_none_zero_p]
                 last_none_zero_p += 1
             current += 1
+
+    @staticmethod
+    def removeDuplicates(nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        if not nums:
+            return 0
+
+        current, pointer = 0, 1
+        while pointer < len(nums):
+            if nums[pointer] != nums[current]:
+                current += 1
+                nums[current] = nums[pointer]
+            pointer += 1
+
+        return current + 1

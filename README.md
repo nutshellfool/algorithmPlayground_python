@@ -31,6 +31,7 @@ to see more usage please refer [coverage docs](https://coverage.readthedocs.io/e
 - [ ] [Maximum Swap](https://leetcode.com/problems/maximum-swap/)
 - [x] [Sort Colors](https://leetcode.com/problems/sort-colors/)
 - [x] [Move Zeroes](https://leetcode.com/problems/move-zeroes/)
+- [x] [Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/)
 
 ### Linked List
 
