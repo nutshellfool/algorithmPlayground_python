@@ -165,3 +165,15 @@ class TestArrayLeetCodeSolution(TestCase):
         _sorted_array = self.solution.sortColors_instinct([])
         self.assertIsNotNone(_sorted_array)
         self.assertEqual(0, len(_sorted_array))
+
+    def test_moveZeroes(self):
+        _array = [0, 1, 0, 3, 12]
+        self.solution.moveZeroes(_array)
+        self.assertIsNotNone(_array)
+        self.assertEqual([1, 3, 12, 0, 0], _array)
+
+    def test_moveZeroes1(self):
+        _array = [0, 3, 0, 1, 12]
+        self.solution.moveZeroes(_array)
+        self.assertIsNotNone(_array)
+        self.assertEqual([3, 1, 12, 0, 0], _array)

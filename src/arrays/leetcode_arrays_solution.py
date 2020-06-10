@@ -151,3 +151,20 @@ class Solution(object):
             return nums
 
         return sorted(nums)
+
+    @staticmethod
+    def moveZeroes(nums):
+        """
+        Do not return anything, modify nums in-place instead.
+        """
+        if not nums:
+            return nums
+
+        last_none_zero_p = current = 0
+
+        while current < len(nums):
+            if nums[current] != 0:
+                nums[last_none_zero_p], nums[current] = nums[current], nums[
+                    last_none_zero_p]
+                last_none_zero_p += 1
+            current += 1
