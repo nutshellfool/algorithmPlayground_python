@@ -94,7 +94,8 @@ class Solution(object):
                 import copy
                 result_list.append(copy.deepcopy(item_list))
                 return
-            for i in range(start_index, n_size + 1):
+            for i in range(start_index,
+                           n_size - (k_size - len(item_list)) + 1 + 1):
                 item_list.append(i)
                 combine_intern(result_list, item_list, i + 1, n_size, k_size)
                 del item_list[-1]
