@@ -17,9 +17,11 @@ class Solution(object):
         if left == n and right == n:
             results.append(string_item)
         if left < n:
-            self.__generate_parenthesis(n, left + 1, right, string_item + "(", results)
+            self.__generate_parenthesis(n, left + 1, right, string_item + "(",
+                                        results)
         if right < n and right < left:
-            self.__generate_parenthesis(n, left, right + 1, string_item + ")", results)
+            self.__generate_parenthesis(n, left, right + 1, string_item + ")",
+                                        results)
 
     def generateParenthesis_instinct(self, n):
         def generate(result_str_list, string_list=None):
@@ -55,3 +57,63 @@ class Solution(object):
         result = []
         generate(result)
         return result
+
+    # def combine(self, n, k):
+    #     """
+    #     :type n: int
+    #     :type k: int
+    #     :rtype: List[List[int]]
+    #     """
+    #     if n < 0 or k < 0:
+    #         return None
+    #     if k == 0 or n == 0:
+    #         return [[]]
+    #
+    #     return [pre + [i] for i in range(k, n + 1) for pre in
+    #             self.combine(i - 1, k - 1)]
+
+    def combine(self, n, k):
+        """
+        :type n: int
+        :type k: int
+        :rtype: List[List[int]]
+        """
+        if n < 0 or k < 0:
+            return None
+        if k == 0 or n == 0:
+            return [[]]
+
+        return [pre + [i] for i in range(k, n + 1) for pre in
+                self.combine(i - 1, k - 1)]
+
+    @staticmethod
+    def combine_backtrace(n, k):
+        def combine_intern(result_list, item_list, start_index, n_size,
+                           k_size):
+            if len(item_list) == k_size:
+                import copy
+                result_list.append(copy.deepcopy(item_list))
+                return
+            for i in range(start_index, n_size + 1):
+                item_list.append(i)
+                combine_intern(result_list, item_list, i + 1, n_size, k_size)
+                del item_list[-1]
+
+        if n < 0 or k < 0:
+            return None
+        if k == 0 or n == 0:
+            return [[]]
+        combines = []
+        intern_item_list = []
+        combine_intern(combines, intern_item_list, 1, n, k)
+        return combines
+
+    @staticmethod
+    def combine_instinct(n, k):
+        if n < 0 or k < 0:
+            return None
+        if k == 0 or n == 0:
+            return [[]]
+        from itertools import combinations
+        combine_list = list(combinations(range(1, n + 1), k))
+        return map(list, combine_list)
