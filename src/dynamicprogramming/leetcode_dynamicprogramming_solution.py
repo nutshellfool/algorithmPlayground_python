@@ -34,7 +34,8 @@ class Solution(object):
         gold_ratio = (1 + pow(5, 0.5)) / 2.0
         other_ratio = (1 - pow(5, 0.5)) / 2.0
 
-        return int(round((pow(gold_ratio, n) - pow(other_ratio, n)) / pow(5, 0.5)))
+        return int(
+            round((pow(gold_ratio, n) - pow(other_ratio, n)) / pow(5, 0.5)))
 
     def climbStairs(self, n):
         """
@@ -65,7 +66,8 @@ class Solution(object):
         gold_ratio = (1 + pow(5, 0.5)) / 2.0
         other_ratio = (1 - pow(5, 0.5)) / 2.0
 
-        return int(round((pow(gold_ratio, n + 1) - pow(other_ratio, n + 1)) / pow(5, 0.5)))
+        return int(round(
+            (pow(gold_ratio, n + 1) - pow(other_ratio, n + 1)) / pow(5, 0.5)))
 
     def minimumTotal(self, triangle):
         """
@@ -86,7 +88,9 @@ class Solution(object):
         for i in reversed(xrange(row_length - 1)):
             column_size = len(triangle[i])
             for j in xrange(column_size):
-                position_min_total[i][j] = min(position_min_total[i + 1][j], position_min_total[i + 1][j + 1]) + \
+                position_min_total[i][j] = min(position_min_total[i + 1][j],
+                                               position_min_total[i + 1][
+                                                   j + 1]) + \
                                            triangle[i][j]
 
         return position_min_total[0][0]
@@ -130,8 +134,10 @@ class Solution(object):
 
         for i in xrange(1, row_len):
             # brutal force beauty
-            dp[i][0] = max(dp[i - 1][0] * nums[i], dp[i - 1][1] * nums[i], nums[i])
-            dp[i][1] = min(dp[i - 1][0] * nums[i], dp[i - 1][1] * nums[i], nums[i])
+            dp[i][0] = max(dp[i - 1][0] * nums[i], dp[i - 1][1] * nums[i],
+                           nums[i])
+            dp[i][1] = min(dp[i - 1][0] * nums[i], dp[i - 1][1] * nums[i],
+                           nums[i])
 
             result = max(result, dp[i][0])
 
@@ -153,6 +159,31 @@ class Solution(object):
                 if nums[i] > nums[j]:
                     dp[i] = max(dp[i], dp[j] + 1)
             result = max(result, dp[i])
+
+        return result
+
+    def lengthOfLIS_binarysearch(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        if not nums:
+            return 0
+
+        dp = [0 for _ in range(len(nums))]
+        result = 0
+
+        for num in nums:
+            left, right = 0, result
+            while left < right:
+                mid = left + (right - left) // 2
+                if dp[mid] < num:
+                    left = mid + 1
+                else:
+                    right = mid
+
+            dp[left] = num
+            result = max(result, left + 1)
 
         return result
 
@@ -221,7 +252,9 @@ class Solution(object):
         #   j means stock holding status (0: do NoT holding, 1: holding )
         #   k means already completed transaction times
         _MAX_TRANSACTION_NUM = 1
-        max_profit = [[[0 for k in range(_MAX_TRANSACTION_NUM + 1)] for j in range(2)] for i in range(len(prices))]
+        max_profit = [
+            [[0 for k in range(_MAX_TRANSACTION_NUM + 1)] for j in range(2)]
+            for i in range(len(prices))]
 
         for k in xrange(_MAX_TRANSACTION_NUM + 1):
             max_profit[0][0][k] = 0
@@ -231,8 +264,11 @@ class Solution(object):
             for k in xrange(_MAX_TRANSACTION_NUM):
                 # 'buy-in' can be count as a transaction
                 # 'sell-out' should NOT count again
-                max_profit[i][0][k] = max(max_profit[i - 1][1][k] + prices[i], max_profit[i - 1][0][k])
-                max_profit[i][1][k] = max(max_profit[i - 1][0][k - 1] - prices[i], max_profit[i - 1][1][k])
+                max_profit[i][0][k] = max(max_profit[i - 1][1][k] + prices[i],
+                                          max_profit[i - 1][0][k])
+                max_profit[i][1][k] = max(
+                    max_profit[i - 1][0][k - 1] - prices[i],
+                    max_profit[i - 1][1][k])
 
         return max(max_profit[len(prices) - 1][0])
 
@@ -246,7 +282,9 @@ class Solution(object):
 
         _MAX_TRANSACTION_NUM = len(prices) // 2
 
-        _max_profit = [[[0 for k in xrange(_MAX_TRANSACTION_NUM + 1)] for j in xrange(2)] for i in xrange(len(prices))]
+        _max_profit = [
+            [[0 for k in xrange(_MAX_TRANSACTION_NUM + 1)] for j in xrange(2)]
+            for i in xrange(len(prices))]
 
         for k in xrange(_MAX_TRANSACTION_NUM + 1):
             _max_profit[0][0][k] = 0
@@ -254,8 +292,12 @@ class Solution(object):
 
         for i in xrange(1, len(prices)):
             for k in xrange(_MAX_TRANSACTION_NUM):
-                _max_profit[i][0][k] = max(_max_profit[i - 1][1][k] + prices[i], _max_profit[i - 1][0][k])
-                _max_profit[i][1][k] = max(_max_profit[i - 1][0][k - 1] - prices[i], _max_profit[i - 1][1][k])
+                _max_profit[i][0][k] = max(
+                    _max_profit[i - 1][1][k] + prices[i],
+                    _max_profit[i - 1][0][k])
+                _max_profit[i][1][k] = max(
+                    _max_profit[i - 1][0][k - 1] - prices[i],
+                    _max_profit[i - 1][1][k])
 
         return max(_max_profit[len(prices) - 1][0])
 
@@ -278,7 +320,9 @@ class Solution(object):
 
         _MAX_TRANSACTION_NUM = 2
 
-        _max_profit = [[[0 for k in xrange(_MAX_TRANSACTION_NUM + 1)] for j in xrange(2)] for i in xrange(len(prices))]
+        _max_profit = [
+            [[0 for k in xrange(_MAX_TRANSACTION_NUM + 1)] for j in xrange(2)]
+            for i in xrange(len(prices))]
 
         for k in xrange(_MAX_TRANSACTION_NUM + 1):
             _max_profit[0][0][k] = 0
@@ -286,8 +330,12 @@ class Solution(object):
 
         for i in xrange(1, len(prices)):
             for k in xrange(_MAX_TRANSACTION_NUM):
-                _max_profit[i][0][k] = max(_max_profit[i - 1][1][k] + prices[i], _max_profit[i - 1][0][k])
-                _max_profit[i][1][k] = max(_max_profit[i - 1][0][k - 1] - prices[i], _max_profit[i - 1][1][k])
+                _max_profit[i][0][k] = max(
+                    _max_profit[i - 1][1][k] + prices[i],
+                    _max_profit[i - 1][0][k])
+                _max_profit[i][1][k] = max(
+                    _max_profit[i - 1][0][k - 1] - prices[i],
+                    _max_profit[i - 1][1][k])
 
         return max(_max_profit[len(prices) - 1][0])
 
@@ -301,7 +349,9 @@ class Solution(object):
 
         _MAX_TRANSACTION_NUM = k
 
-        _max_profit = [[[0 for l in xrange(_MAX_TRANSACTION_NUM + 1)] for j in xrange(2)] for i in xrange(len(prices))]
+        _max_profit = [
+            [[0 for l in xrange(_MAX_TRANSACTION_NUM + 1)] for j in xrange(2)]
+            for i in xrange(len(prices))]
 
         for l in xrange(_MAX_TRANSACTION_NUM + 1):
             _max_profit[0][0][l] = 0
@@ -309,8 +359,12 @@ class Solution(object):
 
         for i in xrange(1, len(prices)):
             for l in xrange(_MAX_TRANSACTION_NUM):
-                _max_profit[i][0][l] = max(_max_profit[i - 1][1][l] + prices[i], _max_profit[i - 1][0][l])
-                _max_profit[i][1][l] = max(_max_profit[i - 1][0][l - 1] - prices[i], _max_profit[i - 1][1][l])
+                _max_profit[i][0][l] = max(
+                    _max_profit[i - 1][1][l] + prices[i],
+                    _max_profit[i - 1][0][l])
+                _max_profit[i][1][l] = max(
+                    _max_profit[i - 1][0][l - 1] - prices[i],
+                    _max_profit[i - 1][1][l])
 
         return max(_max_profit[len(prices) - 1][0])
 
@@ -350,8 +404,11 @@ class Solution(object):
         _max_profit[0][2] = 0
 
         for i in xrange(1, len(prices)):
-            _max_profit[i][0] = max(_max_profit[i - 1][0], _max_profit[i - 1][1] + prices[i], _max_profit[i - 1][2])
-            _max_profit[i][1] = max(_max_profit[i - 1][1], _max_profit[i - 1][2] - prices[i])
+            _max_profit[i][0] = max(_max_profit[i - 1][0],
+                                    _max_profit[i - 1][1] + prices[i],
+                                    _max_profit[i - 1][2])
+            _max_profit[i][1] = max(_max_profit[i - 1][1],
+                                    _max_profit[i - 1][2] - prices[i])
             _max_profit[i][2] = _max_profit[i - 1][0]
 
         return max(_max_profit[len(prices) - 1])
@@ -370,8 +427,10 @@ class Solution(object):
         _max_profit[0][1] = -prices[0]
 
         for i in xrange(1, len(prices)):
-            _max_profit[i][0] = max(_max_profit[i - 1][0], _max_profit[i - 1][1] + prices[i] - fee)
-            _max_profit[i][1] = max(_max_profit[i - 1][1], _max_profit[i - 1][0] - prices[i])
+            _max_profit[i][0] = max(_max_profit[i - 1][0],
+                                    _max_profit[i - 1][1] + prices[i] - fee)
+            _max_profit[i][1] = max(_max_profit[i - 1][1],
+                                    _max_profit[i - 1][0] - prices[i])
         return _max_profit[len(prices) - 1][0]
 
     def minDistance(self, word1, word2):
@@ -380,7 +439,8 @@ class Solution(object):
         :type word2: str
         :rtype: int
         """
-        _min_distance = [[0 for j in xrange(len(word2) + 1)] for i in xrange(len(word1) + 1)]
+        _min_distance = [[0 for j in xrange(len(word2) + 1)] for i in
+                         xrange(len(word1) + 1)]
 
         for i in xrange(len(word1) + 1):
             _min_distance[i][0] = i
@@ -393,7 +453,8 @@ class Solution(object):
                 if word1[i - 1] == word2[j - 1]:
                     _min_distance[i][j] = _min_distance[i - 1][j - 1]
                 else:
-                    _min_distance[i][j] = 1 + min(_min_distance[i - 1][j], _min_distance[i][j - 1],
+                    _min_distance[i][j] = 1 + min(_min_distance[i - 1][j],
+                                                  _min_distance[i][j - 1],
                                                   _min_distance[i - 1][j - 1])
 
         return _min_distance[len(word1)][len(word2)]
@@ -409,7 +470,10 @@ class Solution(object):
         while _dp[_certainty_min_move][K] < N:
             _certainty_min_move += 1
             for l in range(1, K + 1):
-                _dp[_certainty_min_move][l] = _dp[_certainty_min_move - 1][l - 1] + _dp[_certainty_min_move - 1][l] + 1
+                _dp[_certainty_min_move][l] = _dp[_certainty_min_move - 1][
+                                                  l - 1] + \
+                                              _dp[_certainty_min_move - 1][
+                                                  l] + 1
         return _certainty_min_move
 
     def maxSubArray(self, nums):
