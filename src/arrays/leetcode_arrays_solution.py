@@ -212,3 +212,23 @@ class Solution(object):
             _max_length = max(_max_length, left + 1)
 
         return _max_length
+
+    def merge(self, intervals):
+        """
+        :type intervals: List[List[int]]
+        :rtype: List[List[int]]
+        """
+        if not intervals or not intervals[0]:
+            return None
+
+        intervals.sort(key=lambda x: (x[0], -x[1]))
+
+        result = []
+
+        for interval in intervals:
+            if len(result) == 0 or interval[0] > result[-1][1]:
+                result.append(interval)
+            else:
+                result[-1][1] = max(result[-1][1], interval[1])
+
+        return result

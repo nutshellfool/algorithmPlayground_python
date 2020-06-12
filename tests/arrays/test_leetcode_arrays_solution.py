@@ -199,3 +199,23 @@ class TestArrayLeetCodeSolution(TestCase):
         _envelopes = [[4, 5], [4, 6], [6, 7], [2, 3], [1, 1]]
         _max_envelopes = self.solution.maxEnvelopes(_envelopes)
         self.assertEqual(4, _max_envelopes)
+
+    def test_merge(self):
+        intervals = [[1, 3], [2, 6], [8, 10], [15, 18]]
+        expected = [[1, 6], [8, 10], [15, 18]]
+        _merged_interval = self.solution.merge(intervals)
+        self.assertEqual(expected, _merged_interval)
+
+    def test_merge1(self):
+        intervals = [[1, 4], [4, 6]]
+        expected = [[1, 6]]
+        _merged_interval = self.solution.merge(intervals)
+        self.assertEqual(expected, _merged_interval)
+
+    def test_merge_none(self):
+        _merged = self.solution.merge(None)
+        self.assertIsNone(_merged)
+
+    def test_merge_empty(self):
+        _merged = self.solution.merge([])
+        self.assertIsNone(_merged)

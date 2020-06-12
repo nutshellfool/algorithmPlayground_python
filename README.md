@@ -33,6 +33,7 @@ to see more usage please refer [coverage docs](https://coverage.readthedocs.io/e
 - [x] [Move Zeroes](https://leetcode.com/problems/move-zeroes/)
 - [x] [Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/)
 - [x] [Russian Doll Envelopes](https://leetcode.com/problems/russian-doll-envelopes/)
+- [x] [Merge Intervals](https://leetcode.com/problems/merge-intervals/)
 
 ### Linked List
 
