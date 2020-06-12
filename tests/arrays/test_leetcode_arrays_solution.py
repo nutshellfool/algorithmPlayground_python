@@ -189,3 +189,13 @@ class TestArrayLeetCodeSolution(TestCase):
         size = self.solution.removeDuplicates(_array)
         self.assertIsNotNone(_array)
         self.assertEqual(5, size)
+
+    def test_maxEnvelopes(self):
+        _envelopes = [[5, 4], [6, 4], [6, 7], [2, 3]]
+        _max_envelopes = self.solution.maxEnvelopes(_envelopes)
+        self.assertEqual(3, _max_envelopes)
+
+    def test_maxEnvelopes1(self):
+        _envelopes = [[4, 5], [4, 6], [6, 7], [2, 3], [1, 1]]
+        _max_envelopes = self.solution.maxEnvelopes(_envelopes)
+        self.assertEqual(4, _max_envelopes)

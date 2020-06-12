@@ -186,3 +186,29 @@ class Solution(object):
             pointer += 1
 
         return current + 1
+
+    def maxEnvelopes(self, envelopes):
+        """
+        :type envelopes: List[List[int]]
+        :rtype: int
+        """
+        if not envelopes or not envelopes[0]:
+            return 0
+
+        envelopes.sort(key=lambda x: (x[0], -x[1]))
+
+        _max_length = 0
+        dp = [0 for _ in range(len(envelopes) + 1)]
+
+        for _, h in envelopes:
+            left, right = 0, _max_length
+            while left < right:
+                middle = left + (right - left) // 2
+                if dp[middle] < h:
+                    left = middle + 1
+                else:
+                    right = middle
+            dp[left] = h
+            _max_length = max(_max_length, left + 1)
+
+        return _max_length
