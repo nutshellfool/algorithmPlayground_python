@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from src.backtracking.leetcode_string_solution import Solution
+from src.backtracking.leetcode_backtracking_solution import Solution
 
 
 class TestLeetCodeStringSolution(TestCase):
@@ -172,3 +172,17 @@ class TestLeetCodeStringSolution(TestCase):
         result_list = self.solution.combine_instinct(0, 1)
         self.assertIsNotNone(result_list)
         self.assertEqual([[]], result_list)
+
+    def test_subsets(self):
+        expected = [
+            [3],
+            [1],
+            [2],
+            [1, 2, 3],
+            [1, 3],
+            [2, 3],
+            [1, 2],
+            []
+        ]
+        _subsets = self.solution.subsets([1, 2, 3])
+        self.assertItemsEqual(expected, _subsets)

@@ -118,3 +118,24 @@ class Solution(object):
         from itertools import combinations
         combine_list = list(combinations(range(1, n + 1), k))
         return map(list, combine_list)
+
+    def subsets(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: List[List[int]]
+        """
+        if not nums:
+            return []
+        steps = []
+        result = []
+        self._subsets(nums, 0, steps, result)
+        return result
+
+    def _subsets(self, nums, start, steps, result):
+        import copy
+        result.append(copy.deepcopy(steps))
+
+        for i in range(start, len(nums)):
+            steps.append(nums[i])
+            self._subsets(nums, i + 1, steps, result)
+            del steps[-1]
