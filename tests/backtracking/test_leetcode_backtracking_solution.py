@@ -186,3 +186,16 @@ class TestLeetCodeStringSolution(TestCase):
         ]
         _subsets = self.solution.subsets([1, 2, 3])
         self.assertItemsEqual(expected, _subsets)
+
+    def test_subsetsWithDup(self):
+        expected = [
+            [2],
+            [1],
+            [1, 2, 2],
+            [2, 2],
+            [1, 2],
+            []
+        ]
+
+        _subsets_with_dup = self.solution.subsetsWithDup([1, 2, 2])
+        self.assertItemsEqual(expected, _subsets_with_dup)

@@ -139,3 +139,29 @@ class Solution(object):
             steps.append(nums[i])
             self._subsets(nums, i + 1, steps, result)
             del steps[-1]
+
+    def subsetsWithDup(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: List[List[int]]
+        """
+        if not nums:
+            return []
+
+        nums.sort()
+        steps = []
+        result = []
+        self._subsetsWithDup(nums, 0, steps, result)
+        return result
+
+    def _subsetsWithDup(self, nums, start, steps, result):
+        import copy
+        result.append(copy.deepcopy(steps))
+
+        for i in range(start, len(nums)):
+            if i > start and nums[i] == nums[i - 1]:
+                continue
+
+            steps.append(nums[i])
+            self._subsetsWithDup(nums, i + 1, steps, result)
+            del steps[-1]
