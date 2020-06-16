@@ -147,12 +147,16 @@ to see more usage please refer [coverage docs](https://coverage.readthedocs.io/e
 - [ ] [Divide Chocolate](https://leetcode-cn.com/problems/divide-chocolate/)
 
 ### Backtracking
-- [x] [Generate Parentheses](https://leetcode.com/problems/generate-parentheses/)
-- [x] [Restore IP Addresses](https://leetcode.com/problems/restore-ip-addresses/)
-- [ ] [Android Unlock Patterns](https://leetcode.com/problems/android-unlock-patterns/)
 - [x] [Combinations](https://leetcode.com/problems/combinations/)
+- [x] [Restore IP Addresses](https://leetcode.com/problems/restore-ip-addresses/)
+- [ ] [Regular Expression Matching](https://leetcode.com/problems/regular-expression-matching/)
+- [ ] [Word Search](https://leetcode.com/problems/word-search/)
+- [x] [Generate Parentheses](https://leetcode.com/problems/generate-parentheses/)
+- [ ] [Letter Combinations of a Phone Number](https://leetcode.com/problems/letter-combinations-of-a-phone-number/)
+- [ ] [Combination Sum](https://leetcode.com/problems/combination-sum/)
 - [x] [Subsets](https://leetcode.com/problems/subsets/)
 - [x] [Subsets II](https://leetcode.com/problems/subsets-ii/)
+- [ ] [Android Unlock Patterns](https://leetcode.com/problems/android-unlock-patterns/)
 
 ### Dynamic Programming
 
