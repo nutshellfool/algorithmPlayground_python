@@ -199,3 +199,17 @@ class TestLeetCodeStringSolution(TestCase):
 
         _subsets_with_dup = self.solution.subsetsWithDup([1, 2, 2])
         self.assertItemsEqual(expected, _subsets_with_dup)
+
+    def test_restoreIpAddresses_1(self):
+        expected = ["255.255.11.135", "255.255.111.35"]
+        _ip_addresses = self.solution.restoreIpAddresses('25525511135')
+        self.assertItemsEqual(expected, _ip_addresses)
+
+    def test_restoreIpAddresses_2(self):
+        expected = ["0.0.0.0"]
+        _ip_addresses = self.solution.restoreIpAddresses('0000')
+        self.assertItemsEqual(expected, _ip_addresses)
+
+    def test_restoreIpAddresses_length_oversize(self):
+        _ip_addresses = self.solution.restoreIpAddresses('1111111111111')
+        self.assertEqual([], _ip_addresses)

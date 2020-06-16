@@ -148,7 +148,7 @@ to see more usage please refer [coverage docs](https://coverage.readthedocs.io/e
 
 ### Backtracking
 - [x] [Generate Parentheses](https://leetcode.com/problems/generate-parentheses/)
-- [ ] [Restore IP Addresses](https://leetcode.com/problems/restore-ip-addresses/)
+- [x] [Restore IP Addresses](https://leetcode.com/problems/restore-ip-addresses/)
 - [ ] [Android Unlock Patterns](https://leetcode.com/problems/android-unlock-patterns/)
 - [x] [Combinations](https://leetcode.com/problems/combinations/)
 - [x] [Subsets](https://leetcode.com/problems/subsets/)

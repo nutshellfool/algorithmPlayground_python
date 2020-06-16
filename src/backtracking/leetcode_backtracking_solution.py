@@ -165,3 +165,33 @@ class Solution(object):
             steps.append(nums[i])
             self._subsetsWithDup(nums, i + 1, steps, result)
             del steps[-1]
+
+    def restoreIpAddresses(self, s):
+        """
+        :type s: str
+        :rtype: List[str]
+        """
+        if not s or len(s) > 12:
+            return []
+
+        result = []
+        self._backtracking(s, 0, 4, "", result)
+        return result
+
+    def _backtracking(self, s, start, left_part_count, digital_part_str,
+                      result):
+        if left_part_count == 0 and start == len(s):
+            result.append(digital_part_str[:-1])
+
+        for i in range(1, 4):
+            if len(s) - start - i >= 0:
+                segment = s[start: start + i]
+                if self._is_valid_ip_address_part(segment):
+                    self._backtracking(s, start + i, left_part_count - 1,
+                                       digital_part_str + segment + '.',
+                                       result)
+
+    def _is_valid_ip_address_part(self, part_str):
+        if not part_str or (len(part_str) > 1 and part_str[0] == '0'):
+            return False
+        return 0 <= int(part_str) <= 255
