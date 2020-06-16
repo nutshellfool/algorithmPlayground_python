@@ -195,3 +195,45 @@ class Solution(object):
         if not part_str or (len(part_str) > 1 and part_str[0] == '0'):
             return False
         return 0 <= int(part_str) <= 255
+
+    def exist(self, board, word):
+        """
+        :type board: List[List[str]]
+        :type word: str
+        :rtype: bool
+        """
+        if not board or not board[0]:
+            return False
+        row, col = len(board), len(board[0])
+
+        visited = [[False for _ in range(col)] for _ in range(row)]
+
+        for i in range(row):
+            for j in range(col):
+                if (self._exist(board, i, j, word, 0, visited)):
+                    return True
+
+        return False
+
+    def _exist(self, board, row_index, col_index, word, word_index, visited):
+        DX = [0, 1, 0, -1]
+        DY = [1, 0, -1, 0]
+        if row_index < 0 or row_index >= len(
+                board) or col_index < 0 or col_index >= len(board[0]):
+            return False
+        if visited[row_index][col_index] or board[row_index][col_index] != \
+                word[word_index]:
+            return False
+
+        if word_index == len(word) - 1:
+            return True
+
+        visited[row_index][col_index] = True
+        existed = False
+        for direction_index in range(4):
+            existed |= self._exist(board, row_index + DX[direction_index],
+                                   col_index + DY[direction_index], word,
+                                   word_index + 1, visited)
+        if not existed:
+            visited[row_index][col_index] = False
+        return existed

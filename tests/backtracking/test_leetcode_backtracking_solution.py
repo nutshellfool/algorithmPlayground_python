@@ -213,3 +213,39 @@ class TestLeetCodeStringSolution(TestCase):
     def test_restoreIpAddresses_length_oversize(self):
         _ip_addresses = self.solution.restoreIpAddresses('1111111111111')
         self.assertEqual([], _ip_addresses)
+
+    def test_exist(self):
+        board = [
+            ['A', 'B', 'C', 'E'],
+            ['S', 'F', 'C', 'S'],
+            ['A', 'D', 'E', 'E']
+        ]
+        _exist = self.solution.exist(board, "ABCCED")
+        self.assertTrue(_exist)
+
+    def test_exist1(self):
+        board = [
+            ['A', 'B', 'C', 'E'],
+            ['S', 'F', 'C', 'S'],
+            ['A', 'D', 'E', 'E']
+        ]
+        _exist = self.solution.exist(board, "SEE")
+        self.assertTrue(_exist)
+
+    def test_exist2(self):
+        board = [
+            ['A', 'B', 'C', 'E'],
+            ['S', 'F', 'C', 'S'],
+            ['A', 'D', 'E', 'E']
+        ]
+        _exist = self.solution.exist(board, "ABCB")
+        self.assertFalse(_exist)
+
+    def test_exist3(self):
+        board = [
+            ['C', 'A', 'A'],
+            ['A', 'A', 'A'],
+            ['B', 'C', 'D']
+        ]
+        _exist = self.solution.exist(board, "AAB")
+        self.assertTrue(_exist)
