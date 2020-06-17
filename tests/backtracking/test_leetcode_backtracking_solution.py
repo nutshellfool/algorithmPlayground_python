@@ -298,3 +298,17 @@ class TestLeetCodeStringSolution(TestCase):
         combination = self.solution.combinationSum2(candidate, 5)
         self.assertIsNotNone(combination)
         self.assertTrue(sorted(expected) == sorted(combination))
+
+    def test_permute(self):
+        expected = [
+            [1, 2, 3],
+            [1, 3, 2],
+            [2, 1, 3],
+            [2, 3, 1],
+            [3, 1, 2],
+            [3, 2, 1]
+        ]
+        nums = [1, 2, 3]
+        permute = self.solution.permute(nums)
+        self.assertIsNotNone(permute)
+        self.assertTrue(sorted(expected) == sorted(permute))

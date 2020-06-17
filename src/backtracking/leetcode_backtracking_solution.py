@@ -333,3 +333,27 @@ class Solution(object):
                                                 remain - candidates[i], step,
                                                 result)
             step.remove(candidates[i])
+
+    def permute(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: List[List[int]]
+        """
+        if not nums:
+            return []
+        steps, result = [], []
+        self._permute_backtracking(nums, steps, result)
+        return result
+
+    def _permute_backtracking(self, nums, steps, result):
+        if len(steps) == len(nums):
+            import copy
+            result.append(copy.deepcopy(steps))
+            return
+
+        for i in range(len(nums)):
+            if nums[i] in steps:
+                continue
+            steps.append(nums[i])
+            self._permute_backtracking(nums, steps, result)
+            del steps[-1]
