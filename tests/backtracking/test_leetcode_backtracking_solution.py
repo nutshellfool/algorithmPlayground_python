@@ -255,3 +255,24 @@ class TestLeetCodeStringSolution(TestCase):
         letter_combinations = self.solution.letterCombinations('23')
         self.assertIsNotNone(letter_combinations)
         self.assertAlmostEqual(expected, letter_combinations)
+
+    def test_combinationSum(self):
+        expected = [
+            [7],
+            [2, 2, 3]
+        ]
+        candidate = [2, 3, 6, 7]
+        combination = self.solution.combinationSum(candidate, 7)
+        self.assertIsNotNone(combination)
+        self.assertTrue(sorted(expected) == sorted(combination))
+
+    def test_combinationSum_case1(self):
+        expected = [
+            [2, 2, 2, 2],
+            [2, 3, 3],
+            [3, 5]
+        ]
+        candidate = [2, 3, 5]
+        combination = self.solution.combinationSum(candidate, 8)
+        self.assertIsNotNone(combination)
+        self.assertTrue(sorted(expected) == sorted(combination))

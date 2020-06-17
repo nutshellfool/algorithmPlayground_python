@@ -273,3 +273,31 @@ class Solution(object):
             self._letter_comnination_backtracking(combination + letter,
                                                   next_digits[1:], digital_map,
                                                   result)
+
+    def combinationSum(self, candidates, target):
+        """
+        :type candidates: List[int]
+        :type target: int
+        :rtype: List[List[int]]
+        """
+        if not candidates:
+            return []
+        steps = []
+        result = []
+        self._combination_sum_backtrack(candidates, 0, target, steps, result)
+        return result
+
+    def _combination_sum_backtrack(self, candidates, start, remain, step,
+                                   result):
+        if remain < 0:
+            return
+        if remain == 0:
+            import copy
+            result.append(copy.deepcopy(step))
+
+        for i in range(start, len(candidates)):
+            step.append(candidates[i])
+            self._combination_sum_backtrack(candidates, i,
+                                            remain - candidates[i], step,
+                                            result)
+            step.remove(candidates[i])
