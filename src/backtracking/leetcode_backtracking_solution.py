@@ -237,3 +237,39 @@ class Solution(object):
         if not existed:
             visited[row_index][col_index] = False
         return existed
+
+    def letterCombinations(self, digits):
+        """
+        :type digits: str
+        :rtype: List[str]
+        """
+        if not digits:
+            return []
+
+        _digital_lettersmap = {
+            '2': 'abc',
+            '3': 'def',
+            '4': 'ghi',
+            '5': 'jkl',
+            '6': 'mno',
+            '7': 'pqrs',
+            '8': 'tuv',
+            '9': 'wxyz'
+        }
+
+        _result = []
+        self._letter_comnination_backtracking('', digits, _digital_lettersmap,
+                                              _result)
+        return _result
+
+    def _letter_comnination_backtracking(self, combination, next_digits,
+                                         digital_map, result):
+        if len(next_digits) == 0:
+            result.append(combination)
+            return
+        letters = digital_map.get(next_digits[0])
+        for i in range(len(letters)):
+            letter = letters[i: i + 1]
+            self._letter_comnination_backtracking(combination + letter,
+                                                  next_digits[1:], digital_map,
+                                                  result)

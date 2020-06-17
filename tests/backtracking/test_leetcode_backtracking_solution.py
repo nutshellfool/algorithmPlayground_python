@@ -249,3 +249,9 @@ class TestLeetCodeStringSolution(TestCase):
         ]
         _exist = self.solution.exist(board, "AAB")
         self.assertTrue(_exist)
+
+    def test_letterCombinations(self):
+        expected = ["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"]
+        letter_combinations = self.solution.letterCombinations('23')
+        self.assertIsNotNone(letter_combinations)
+        self.assertAlmostEqual(expected, letter_combinations)
