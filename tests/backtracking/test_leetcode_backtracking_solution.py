@@ -276,3 +276,25 @@ class TestLeetCodeStringSolution(TestCase):
         combination = self.solution.combinationSum(candidate, 8)
         self.assertIsNotNone(combination)
         self.assertTrue(sorted(expected) == sorted(combination))
+
+    def test_combinationSum2(self):
+        expected = [
+            [1, 7],
+            [1, 2, 5],
+            [2, 6],
+            [1, 1, 6]
+        ]
+        candidate = [10, 1, 2, 7, 6, 1, 5]
+        combination = self.solution.combinationSum2(candidate, 8)
+        self.assertIsNotNone(combination)
+        self.assertTrue(sorted(expected) == sorted(combination))
+
+    def test_combinationSum2_case1(self):
+        expected = [
+            [1, 2, 2],
+            [5]
+        ]
+        candidate = [2, 5, 2, 1, 2]
+        combination = self.solution.combinationSum2(candidate, 5)
+        self.assertIsNotNone(combination)
+        self.assertTrue(sorted(expected) == sorted(combination))

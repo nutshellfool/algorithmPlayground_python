@@ -301,3 +301,35 @@ class Solution(object):
                                             remain - candidates[i], step,
                                             result)
             step.remove(candidates[i])
+
+    def combinationSum2(self, candidates, target):
+        """
+        :type candidates: List[int]
+        :type target: int
+        :rtype: List[List[int]]
+        """
+        if not candidates:
+            return []
+        candidates.sort()
+        step, result = [], []
+        self._combination_sum2_backtracking(candidates, 0, target, step,
+                                            result)
+
+        return result
+
+    def _combination_sum2_backtracking(self, candidates, start, remain, step,
+                                       result):
+        if remain < 0:
+            return
+        if remain == 0:
+            import copy
+            result.append(copy.deepcopy(step))
+            return
+        for i in range(start, len(candidates)):
+            if i > start and candidates[i] == candidates[i - 1]:
+                continue
+            step.append(candidates[i])
+            self._combination_sum2_backtracking(candidates, i + 1,
+                                                remain - candidates[i], step,
+                                                result)
+            step.remove(candidates[i])
