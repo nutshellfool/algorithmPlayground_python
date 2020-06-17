@@ -312,3 +312,28 @@ class TestLeetCodeStringSolution(TestCase):
         permute = self.solution.permute(nums)
         self.assertIsNotNone(permute)
         self.assertTrue(sorted(expected) == sorted(permute))
+
+    def test_permute_unique(self):
+        expected = [
+            [1, 1, 2],
+            [1, 2, 1],
+            [2, 1, 1]
+        ]
+        nums = [1, 1, 2]
+        permute = self.solution.permuteUnique(nums)
+        self.assertIsNotNone(permute)
+        self.assertTrue(sorted(expected) == sorted(permute))
+
+    def test_permute_unique_case1(self):
+        expected = [
+            [1, 1, 2, 2],
+            [1, 2, 1, 2],
+            [1, 2, 2, 1],
+            [2, 1, 1, 2],
+            [2, 1, 2, 1],
+            [2, 2, 1, 1]
+        ]
+        nums = [2, 2, 1, 1]
+        permute = self.solution.permuteUnique(nums)
+        self.assertIsNotNone(permute)
+        self.assertTrue(sorted(expected) == sorted(permute))

@@ -159,6 +159,7 @@ to see more usage please refer [coverage docs](https://coverage.readthedocs.io/e
 - [x] [Subsets II](https://leetcode.com/problems/subsets-ii/)
 - [ ] [Android Unlock Patterns](https://leetcode.com/problems/android-unlock-patterns/)
 - [x] [Permutations](https://leetcode.com/problems/permutations/)
+- [x] [Permutations II](https://leetcode.com/problems/permutations-ii/)
 
 
 ### Dynamic Programming

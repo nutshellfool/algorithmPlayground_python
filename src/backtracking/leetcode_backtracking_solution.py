@@ -357,3 +357,32 @@ class Solution(object):
             steps.append(nums[i])
             self._permute_backtracking(nums, steps, result)
             del steps[-1]
+
+    def permuteUnique(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: List[List[int]]
+        """
+        if not nums:
+            return []
+        nums.sort()
+        steps, result = [], []
+        used = [False for _ in range(len(nums))]
+        self._permute_unique_backtracking(nums, steps, used, result)
+        return result
+
+    def _permute_unique_backtracking(self, nums, steps, used, result):
+        if len(steps) == len(nums):
+            import copy
+            result.append(copy.deepcopy(steps))
+            return
+
+        for i in range(len(nums)):
+            if used[i] or (
+                    i > 0 and nums[i] == nums[i - 1] and not used[i - 1]):
+                continue
+            used[i] = True
+            steps.append(nums[i])
+            self._permute_unique_backtracking(nums, steps, used, result)
+            del steps[-1]
+            used[i] = False
