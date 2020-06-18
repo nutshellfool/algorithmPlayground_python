@@ -18,3 +18,7 @@ class TestLeetCodeStringSolution(TestCase):
     def test_strStr2(self):
         _index = self.solution.strStr("aaaaa", "")
         self.assertEqual(0, _index)
+
+    def test_strStr3(self):
+        _index = self.solution.strStr("", "")
+        self.assertEqual(0, _index)
