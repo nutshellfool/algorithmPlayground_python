@@ -205,6 +205,10 @@ to see more usage please refer [coverage docs](https://coverage.readthedocs.io/e
 - [x] [Counting Bits](https://leetcode.com/problems/counting-bits/)
 - [ ] [UTF-8 Validation](https://leetcode.com/problems/utf-8-validation/)
 
+### String
+
+- [x] [Implement strStr()](https://leetcode.com/problems/implement-strstr/)
+
 ### two variable
 
 - [ ] [Maximum Subarray](https://lintcode.com/problem/maximum-subarray/)
