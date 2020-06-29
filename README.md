@@ -50,7 +50,7 @@ to see more usage please refer [coverage docs](https://coverage.readthedocs.io/e
 - [x] [Add Two Numbers II](https://leetcode.com/problems/add-two-numbers-ii/)
 - [ ] [Reorder List](https://leetcode.com/problems/reorder-list/)
 - [x] [Remove Duplicates from Sorted List](https://leetcode.com/problems/remove-duplicates-from-sorted-list/)
-- [ ] [Remove Duplicates from Sorted List II](https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/)
+- [x] [Remove Duplicates from Sorted List II](https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/)
 
 
 ### Stack & Queue

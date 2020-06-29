@@ -228,3 +228,24 @@ class Solution(object):
             else:
                 current = current.next
         return head
+
+    def deleteDuplicates2(self, head):
+        """
+        :type head: ListNode
+        :rtype: ListNode
+        """
+        pre, current = None, head
+
+        while current and current.next:
+            if current.value == current.next.value:
+                while current.next and current.value == current.next.value:
+                    current = current.next
+                if pre:
+                    pre.next = current.next
+                else:
+                    head = current.next
+            else:
+                pre = current
+
+            current = current.next
+        return head
