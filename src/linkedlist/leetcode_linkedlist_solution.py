@@ -215,3 +215,16 @@ class Solution(object):
             pre.next, a.next, b.next = b, b.next, a
             pre = a
         return dummy.next
+
+    def deleteDuplicates(self, head):
+        """
+        :type head: ListNode
+        :rtype: ListNode
+        """
+        current = head
+        while current and current.next:
+            if current.value == current.next.value:
+                current.next = current.next.next
+            else:
+                current = current.next
+        return head

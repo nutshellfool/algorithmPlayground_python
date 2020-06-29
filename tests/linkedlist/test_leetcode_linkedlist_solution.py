@@ -1,7 +1,8 @@
 from unittest import TestCase
 
 from src.linkedlist.leetcode_linkedlist_solution import Solution
-from src.linkedlist.singlelinkedlist_solution import SingleLinkedList, SingleLinkedNode
+from src.linkedlist.singlelinkedlist_solution import SingleLinkedList, \
+    SingleLinkedNode
 
 
 class TestLeetCodeSolution(TestCase):
@@ -24,7 +25,8 @@ class TestLeetCodeSolution(TestCase):
         self.list_beta = None
 
     def test_mergeTwoLists(self):
-        head_node = self.solution.mergeTwoLists(self.list_alpha.head.next, self.list_beta.head.next)
+        head_node = self.solution.mergeTwoLists(self.list_alpha.head.next,
+                                                self.list_beta.head.next)
         self.assertIsNotNone(head_node)
         self.assertEqual(1, head_node.value)
         self.assertEqual(1, head_node.next.value)
@@ -39,7 +41,8 @@ class TestLeetCodeSolution(TestCase):
         self.assertIsNone(head_node)
 
     def test_mergeTwoListP1None(self):
-        head_node = self.solution.mergeTwoLists(None, self.list_alpha.head.next)
+        head_node = self.solution.mergeTwoLists(None,
+                                                self.list_alpha.head.next)
         self.assertIsNotNone(head_node)
         self.assertEqual(self.list_alpha.head.next, head_node)
 
@@ -47,7 +50,8 @@ class TestLeetCodeSolution(TestCase):
         self.list_gama = SingleLinkedList()
         self.list_gama.append_node_to_tail(0)
 
-        lists = [self.list_alpha.head.next, self.list_beta.head.next, self.list_gama.head.next]
+        lists = [self.list_alpha.head.next, self.list_beta.head.next,
+                 self.list_gama.head.next]
         head_node = self.solution.mergeKLists(lists)
         self.assertIsNotNone(head_node)
         self.assertEqual(0, head_node.value)
@@ -286,3 +290,14 @@ class TestLeetCodeSolution(TestCase):
         input_node.value = 1
         head = self.solution.swapPairs(input_node)
         self.assertEqual(input_node, head)
+
+    def test_deleteDuplicates(self):
+        list = SingleLinkedList()
+        list.append_node_to_tail(1)
+        list.append_node_to_tail(1)
+        list.append_node_to_tail(2)
+        head = self.solution.deleteDuplicates(list.head.next)
+        self.assertIsNotNone(head)
+        self.assertEqual(1, head.value)
+        self.assertEqual(2, head.next.value)
+        self.assertIsNone(head.next.next)
