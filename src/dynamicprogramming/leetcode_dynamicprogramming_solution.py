@@ -492,3 +492,33 @@ class Solution(object):
             _max_subarray_sum = max(_max_subarray_sum, _dp[i])
 
         return _max_subarray_sum
+
+    def rob(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        if not nums:
+            return 0
+        last, now = 0, 0
+        for i in nums:
+            last, now = now, max(last + i, now)
+        return now
+
+    def robdp(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        if not nums:
+            return 0
+
+        _dp = [[0 for j in range(2)] for i in range(len(nums))]
+        _dp[0][0] = 0
+        _dp[0][1] = nums[0]
+
+        for i in range(1, len(nums)):
+            _dp[i][0] = max(_dp[i - 1][0], _dp[i - 1][1])
+            _dp[i][1] = _dp[i - 1][0] + nums[i]
+
+        return max(_dp[len(nums) - 1][0], _dp[(len(nums) - 1)][1])

@@ -184,6 +184,7 @@ to see more usage please refer [coverage docs](https://coverage.readthedocs.io/e
 - [x] [Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/)
 - [x] [Super Egg Drop](https://leetcode.com/problems/super-egg-drop/)
 - [ ] [Android Unlock Patterns](https://leetcode.com/problems/android-unlock-patterns/)
+- [x] [House Robber](https://leetcode.com/problems/house-robber/)
 
 ## Advanced data structure & algorithm
 

@@ -1554,3 +1554,23 @@ class TestLeetCodeDynamicProgrammingSolution(TestCase):
         _array = []
         _max_subarray_sum = self.solution.maxSubArray(_array)
         self.assertEqual(0, _max_subarray_sum)
+
+    def test_rob(self):
+        nums = [1, 2, 3, 1]
+        rob = self.solution.rob(nums)
+        self.assertEqual(4, rob)
+
+    def test_rob1(self):
+        nums = [2, 7, 9, 3, 1]
+        rob = self.solution.rob(nums)
+        self.assertEqual(12, rob)
+
+    def test_robdp(self):
+        nums = [1, 2, 3, 1]
+        rob = self.solution.robdp(nums)
+        self.assertEqual(4, rob)
+
+    def test_robdp1(self):
+        nums = [2, 7, 9, 3, 1]
+        rob = self.solution.robdp(nums)
+        self.assertEqual(12, rob)
